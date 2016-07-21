@@ -26,4 +26,8 @@ public class logicaBean {
     
         return "";
     }
+    public String logout(){
+    
+        return "";
+    }
 }
