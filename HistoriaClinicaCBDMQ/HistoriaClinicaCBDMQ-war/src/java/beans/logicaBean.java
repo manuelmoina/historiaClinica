@@ -17,8 +17,6 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class logicaBean {
 
-   
-    
     public logicaBean() {
     }
     
