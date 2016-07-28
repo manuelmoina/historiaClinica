@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListHabitosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListHabitosEmpty}" rendered="#{habitosController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{habitosController.items.rowCount > 0}">
+                    <h:outputText value="#{habitosController.pagination.pageFirstItem + 1}..#{habitosController.pagination.pageLastItem + 1}/#{habitosController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{habitosController.previous}" value="#{bundle.Previous} #{habitosController.pagination.pageSize}" rendered="#{habitosController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{habitosController.next}" value="#{bundle.Next} #{habitosController.pagination.pageSize}" rendered="#{habitosController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{habitosController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHabitosTitle_id}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.id}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHabitosTitle_cigarrillohz}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cigarrillohz}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHabitosTitle_cigarrilloinicio}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cigarrilloinicio}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHabitosTitle_cigarrillofin}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cigarrillofin}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHabitosTitle_cigarrillodetalle}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cigarrillodetalle}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHabitosTitle_alcoholhz}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.alcoholhz}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHabitosTitle_alcoholinicio}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.alcoholinicio}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHabitosTitle_alcoholfin}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.alcoholfin}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHabitosTitle_alcoholdetalle}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.alcoholdetalle}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHabitosTitle_droganombre0}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.droganombre0}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHabitosTitle_drogainicio0}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.drogainicio0}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHabitosTitle_drogafin0}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.drogafin0}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHabitosTitle_drogadetalle0}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.drogadetalle0}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHabitosTitle_droganombre1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.droganombre1}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHabitosTitle_drogainicio1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.drogainicio1}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHabitosTitle_drogafin1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.drogafin1}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHabitosTitle_drogadetalle1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.drogadetalle1}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHabitosTitle_droganombre2}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.droganombre2}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHabitosTitle_drogainicio2}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.drogainicio2}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHabitosTitle_drogafin2}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.drogafin2}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHabitosTitle_drogadetalle2}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.drogadetalle2}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListHabitosTitle_datId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.datId}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{habitosController.prepareView}" value="#{bundle.ListHabitosViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{habitosController.prepareEdit}" value="#{bundle.ListHabitosEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{habitosController.destroy}" value="#{bundle.ListHabitosDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{habitosController.prepareCreate}" value="#{bundle.ListHabitosCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListHabitosIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

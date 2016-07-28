@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewHabitosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewHabitosLabel_id}"/>
+                    <h:outputText value="#{habitosController.selected.id}" title="#{bundle.ViewHabitosTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewHabitosLabel_cigarrillohz}"/>
+                    <h:outputText value="#{habitosController.selected.cigarrillohz}" title="#{bundle.ViewHabitosTitle_cigarrillohz}"/>
+                    <h:outputText value="#{bundle.ViewHabitosLabel_cigarrilloinicio}"/>
+                    <h:outputText value="#{habitosController.selected.cigarrilloinicio}" title="#{bundle.ViewHabitosTitle_cigarrilloinicio}"/>
+                    <h:outputText value="#{bundle.ViewHabitosLabel_cigarrillofin}"/>
+                    <h:outputText value="#{habitosController.selected.cigarrillofin}" title="#{bundle.ViewHabitosTitle_cigarrillofin}"/>
+                    <h:outputText value="#{bundle.ViewHabitosLabel_cigarrillodetalle}"/>
+                    <h:outputText value="#{habitosController.selected.cigarrillodetalle}" title="#{bundle.ViewHabitosTitle_cigarrillodetalle}"/>
+                    <h:outputText value="#{bundle.ViewHabitosLabel_alcoholhz}"/>
+                    <h:outputText value="#{habitosController.selected.alcoholhz}" title="#{bundle.ViewHabitosTitle_alcoholhz}"/>
+                    <h:outputText value="#{bundle.ViewHabitosLabel_alcoholinicio}"/>
+                    <h:outputText value="#{habitosController.selected.alcoholinicio}" title="#{bundle.ViewHabitosTitle_alcoholinicio}"/>
+                    <h:outputText value="#{bundle.ViewHabitosLabel_alcoholfin}"/>
+                    <h:outputText value="#{habitosController.selected.alcoholfin}" title="#{bundle.ViewHabitosTitle_alcoholfin}"/>
+                    <h:outputText value="#{bundle.ViewHabitosLabel_alcoholdetalle}"/>
+                    <h:outputText value="#{habitosController.selected.alcoholdetalle}" title="#{bundle.ViewHabitosTitle_alcoholdetalle}"/>
+                    <h:outputText value="#{bundle.ViewHabitosLabel_droganombre0}"/>
+                    <h:outputText value="#{habitosController.selected.droganombre0}" title="#{bundle.ViewHabitosTitle_droganombre0}"/>
+                    <h:outputText value="#{bundle.ViewHabitosLabel_drogainicio0}"/>
+                    <h:outputText value="#{habitosController.selected.drogainicio0}" title="#{bundle.ViewHabitosTitle_drogainicio0}"/>
+                    <h:outputText value="#{bundle.ViewHabitosLabel_drogafin0}"/>
+                    <h:outputText value="#{habitosController.selected.drogafin0}" title="#{bundle.ViewHabitosTitle_drogafin0}"/>
+                    <h:outputText value="#{bundle.ViewHabitosLabel_drogadetalle0}"/>
+                    <h:outputText value="#{habitosController.selected.drogadetalle0}" title="#{bundle.ViewHabitosTitle_drogadetalle0}"/>
+                    <h:outputText value="#{bundle.ViewHabitosLabel_droganombre1}"/>
+                    <h:outputText value="#{habitosController.selected.droganombre1}" title="#{bundle.ViewHabitosTitle_droganombre1}"/>
+                    <h:outputText value="#{bundle.ViewHabitosLabel_drogainicio1}"/>
+                    <h:outputText value="#{habitosController.selected.drogainicio1}" title="#{bundle.ViewHabitosTitle_drogainicio1}"/>
+                    <h:outputText value="#{bundle.ViewHabitosLabel_drogafin1}"/>
+                    <h:outputText value="#{habitosController.selected.drogafin1}" title="#{bundle.ViewHabitosTitle_drogafin1}"/>
+                    <h:outputText value="#{bundle.ViewHabitosLabel_drogadetalle1}"/>
+                    <h:outputText value="#{habitosController.selected.drogadetalle1}" title="#{bundle.ViewHabitosTitle_drogadetalle1}"/>
+                    <h:outputText value="#{bundle.ViewHabitosLabel_droganombre2}"/>
+                    <h:outputText value="#{habitosController.selected.droganombre2}" title="#{bundle.ViewHabitosTitle_droganombre2}"/>
+                    <h:outputText value="#{bundle.ViewHabitosLabel_drogainicio2}"/>
+                    <h:outputText value="#{habitosController.selected.drogainicio2}" title="#{bundle.ViewHabitosTitle_drogainicio2}"/>
+                    <h:outputText value="#{bundle.ViewHabitosLabel_drogafin2}"/>
+                    <h:outputText value="#{habitosController.selected.drogafin2}" title="#{bundle.ViewHabitosTitle_drogafin2}"/>
+                    <h:outputText value="#{bundle.ViewHabitosLabel_drogadetalle2}"/>
+                    <h:outputText value="#{habitosController.selected.drogadetalle2}" title="#{bundle.ViewHabitosTitle_drogadetalle2}"/>
+                    <h:outputText value="#{bundle.ViewHabitosLabel_datId}"/>
+                    <h:outputText value="#{habitosController.selected.datId}" title="#{bundle.ViewHabitosTitle_datId}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{habitosController.destroyAndView}" value="#{bundle.ViewHabitosDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewHabitosEditLink}"/>
+                <br />
+                <h:commandLink action="#{habitosController.prepareCreate}" value="#{bundle.ViewHabitosCreateLink}" />
+                <br />
+                <h:commandLink action="#{habitosController.prepareList}" value="#{bundle.ViewHabitosShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewHabitosIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

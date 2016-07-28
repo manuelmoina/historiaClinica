@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateExposicionesimportantesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateExposicionesimportantesLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{exposicionesimportantesController.selected.id}" title="#{bundle.CreateExposicionesimportantesTitle_id}" required="true" requiredMessage="#{bundle.CreateExposicionesimportantesRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.CreateExposicionesimportantesLabel_agente0}" for="agente0" />
+                    <h:inputText id="agente0" value="#{exposicionesimportantesController.selected.agente0}" title="#{bundle.CreateExposicionesimportantesTitle_agente0}" />
+                    <h:outputLabel value="#{bundle.CreateExposicionesimportantesLabel_agentedetalle0}" for="agentedetalle0" />
+                    <h:inputText id="agentedetalle0" value="#{exposicionesimportantesController.selected.agentedetalle0}" title="#{bundle.CreateExposicionesimportantesTitle_agentedetalle0}" />
+                    <h:outputLabel value="#{bundle.CreateExposicionesimportantesLabel_agente1}" for="agente1" />
+                    <h:inputText id="agente1" value="#{exposicionesimportantesController.selected.agente1}" title="#{bundle.CreateExposicionesimportantesTitle_agente1}" />
+                    <h:outputLabel value="#{bundle.CreateExposicionesimportantesLabel_agentedetalle1}" for="agentedetalle1" />
+                    <h:inputText id="agentedetalle1" value="#{exposicionesimportantesController.selected.agentedetalle1}" title="#{bundle.CreateExposicionesimportantesTitle_agentedetalle1}" />
+                    <h:outputLabel value="#{bundle.CreateExposicionesimportantesLabel_agente2}" for="agente2" />
+                    <h:inputText id="agente2" value="#{exposicionesimportantesController.selected.agente2}" title="#{bundle.CreateExposicionesimportantesTitle_agente2}" />
+                    <h:outputLabel value="#{bundle.CreateExposicionesimportantesLabel_agentedetalle2}" for="agentedetalle2" />
+                    <h:inputText id="agentedetalle2" value="#{exposicionesimportantesController.selected.agentedetalle2}" title="#{bundle.CreateExposicionesimportantesTitle_agentedetalle2}" />
+                    <h:outputLabel value="#{bundle.CreateExposicionesimportantesLabel_agente3}" for="agente3" />
+                    <h:inputText id="agente3" value="#{exposicionesimportantesController.selected.agente3}" title="#{bundle.CreateExposicionesimportantesTitle_agente3}" />
+                    <h:outputLabel value="#{bundle.CreateExposicionesimportantesLabel_agentedetalle3}" for="agentedetalle3" />
+                    <h:inputText id="agentedetalle3" value="#{exposicionesimportantesController.selected.agentedetalle3}" title="#{bundle.CreateExposicionesimportantesTitle_agentedetalle3}" />
+                    <h:outputLabel value="#{bundle.CreateExposicionesimportantesLabel_datId}" for="datId" />
+                    <h:selectOneMenu id="datId" value="#{exposicionesimportantesController.selected.datId}" title="#{bundle.CreateExposicionesimportantesTitle_datId}" >
+                        <f:selectItems value="#{datosidentificacionController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{exposicionesimportantesController.create}" value="#{bundle.CreateExposicionesimportantesSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{exposicionesimportantesController.prepareList}" value="#{bundle.CreateExposicionesimportantesShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateExposicionesimportantesIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

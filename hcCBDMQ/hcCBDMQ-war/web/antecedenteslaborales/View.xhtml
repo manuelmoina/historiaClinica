@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewAntecedenteslaboralesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewAntecedenteslaboralesLabel_id}"/>
+                    <h:outputText value="#{antecedenteslaboralesController.selected.id}" title="#{bundle.ViewAntecedenteslaboralesTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewAntecedenteslaboralesLabel_trabajoanterior0}"/>
+                    <h:outputText value="#{antecedenteslaboralesController.selected.trabajoanterior0}" title="#{bundle.ViewAntecedenteslaboralesTitle_trabajoanterior0}"/>
+                    <h:outputText value="#{bundle.ViewAntecedenteslaboralesLabel_tinicio0}"/>
+                    <h:outputText value="#{antecedenteslaboralesController.selected.tinicio0}" title="#{bundle.ViewAntecedenteslaboralesTitle_tinicio0}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewAntecedenteslaboralesLabel_tfin0}"/>
+                    <h:outputText value="#{antecedenteslaboralesController.selected.tfin0}" title="#{bundle.ViewAntecedenteslaboralesTitle_tfin0}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewAntecedenteslaboralesLabel_triesgo0}"/>
+                    <h:outputText value="#{antecedenteslaboralesController.selected.triesgo0}" title="#{bundle.ViewAntecedenteslaboralesTitle_triesgo0}"/>
+                    <h:outputText value="#{bundle.ViewAntecedenteslaboralesLabel_tepp0}"/>
+                    <h:outputText value="#{antecedenteslaboralesController.selected.tepp0}" title="#{bundle.ViewAntecedenteslaboralesTitle_tepp0}"/>
+                    <h:outputText value="#{bundle.ViewAntecedenteslaboralesLabel_trabajoanterior1}"/>
+                    <h:outputText value="#{antecedenteslaboralesController.selected.trabajoanterior1}" title="#{bundle.ViewAntecedenteslaboralesTitle_trabajoanterior1}"/>
+                    <h:outputText value="#{bundle.ViewAntecedenteslaboralesLabel_tinicio1}"/>
+                    <h:outputText value="#{antecedenteslaboralesController.selected.tinicio1}" title="#{bundle.ViewAntecedenteslaboralesTitle_tinicio1}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewAntecedenteslaboralesLabel_tfin1}"/>
+                    <h:outputText value="#{antecedenteslaboralesController.selected.tfin1}" title="#{bundle.ViewAntecedenteslaboralesTitle_tfin1}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewAntecedenteslaboralesLabel_triesgo1}"/>
+                    <h:outputText value="#{antecedenteslaboralesController.selected.triesgo1}" title="#{bundle.ViewAntecedenteslaboralesTitle_triesgo1}"/>
+                    <h:outputText value="#{bundle.ViewAntecedenteslaboralesLabel_tepp1}"/>
+                    <h:outputText value="#{antecedenteslaboralesController.selected.tepp1}" title="#{bundle.ViewAntecedenteslaboralesTitle_tepp1}"/>
+                    <h:outputText value="#{bundle.ViewAntecedenteslaboralesLabel_trabajoanterior2}"/>
+                    <h:outputText value="#{antecedenteslaboralesController.selected.trabajoanterior2}" title="#{bundle.ViewAntecedenteslaboralesTitle_trabajoanterior2}"/>
+                    <h:outputText value="#{bundle.ViewAntecedenteslaboralesLabel_tinicio2}"/>
+                    <h:outputText value="#{antecedenteslaboralesController.selected.tinicio2}" title="#{bundle.ViewAntecedenteslaboralesTitle_tinicio2}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewAntecedenteslaboralesLabel_tfin2}"/>
+                    <h:outputText value="#{antecedenteslaboralesController.selected.tfin2}" title="#{bundle.ViewAntecedenteslaboralesTitle_tfin2}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewAntecedenteslaboralesLabel_triesgo2}"/>
+                    <h:outputText value="#{antecedenteslaboralesController.selected.triesgo2}" title="#{bundle.ViewAntecedenteslaboralesTitle_triesgo2}"/>
+                    <h:outputText value="#{bundle.ViewAntecedenteslaboralesLabel_tepp2}"/>
+                    <h:outputText value="#{antecedenteslaboralesController.selected.tepp2}" title="#{bundle.ViewAntecedenteslaboralesTitle_tepp2}"/>
+                    <h:outputText value="#{bundle.ViewAntecedenteslaboralesLabel_trabajoanterior3}"/>
+                    <h:outputText value="#{antecedenteslaboralesController.selected.trabajoanterior3}" title="#{bundle.ViewAntecedenteslaboralesTitle_trabajoanterior3}"/>
+                    <h:outputText value="#{bundle.ViewAntecedenteslaboralesLabel_tinicio3}"/>
+                    <h:outputText value="#{antecedenteslaboralesController.selected.tinicio3}" title="#{bundle.ViewAntecedenteslaboralesTitle_tinicio3}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewAntecedenteslaboralesLabel_tfin3}"/>
+                    <h:outputText value="#{antecedenteslaboralesController.selected.tfin3}" title="#{bundle.ViewAntecedenteslaboralesTitle_tfin3}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewAntecedenteslaboralesLabel_triesgo3}"/>
+                    <h:outputText value="#{antecedenteslaboralesController.selected.triesgo3}" title="#{bundle.ViewAntecedenteslaboralesTitle_triesgo3}"/>
+                    <h:outputText value="#{bundle.ViewAntecedenteslaboralesLabel_tepp3}"/>
+                    <h:outputText value="#{antecedenteslaboralesController.selected.tepp3}" title="#{bundle.ViewAntecedenteslaboralesTitle_tepp3}"/>
+                    <h:outputText value="#{bundle.ViewAntecedenteslaboralesLabel_datId}"/>
+                    <h:outputText value="#{antecedenteslaboralesController.selected.datId}" title="#{bundle.ViewAntecedenteslaboralesTitle_datId}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{antecedenteslaboralesController.destroyAndView}" value="#{bundle.ViewAntecedenteslaboralesDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewAntecedenteslaboralesEditLink}"/>
+                <br />
+                <h:commandLink action="#{antecedenteslaboralesController.prepareCreate}" value="#{bundle.ViewAntecedenteslaboralesCreateLink}" />
+                <br />
+                <h:commandLink action="#{antecedenteslaboralesController.prepareList}" value="#{bundle.ViewAntecedenteslaboralesShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewAntecedenteslaboralesIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

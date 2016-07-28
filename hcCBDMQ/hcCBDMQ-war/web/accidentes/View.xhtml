@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewAccidentesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewAccidentesLabel_id}"/>
+                    <h:outputText value="#{accidentesController.selected.id}" title="#{bundle.ViewAccidentesTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewAccidentesLabel_accidentefecha0}"/>
+                    <h:outputText value="#{accidentesController.selected.accidentefecha0}" title="#{bundle.ViewAccidentesTitle_accidentefecha0}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewAccidentesLabel_accidente0}"/>
+                    <h:outputText value="#{accidentesController.selected.accidente0}" title="#{bundle.ViewAccidentesTitle_accidente0}"/>
+                    <h:outputText value="#{bundle.ViewAccidentesLabel_accidentefecha1}"/>
+                    <h:outputText value="#{accidentesController.selected.accidentefecha1}" title="#{bundle.ViewAccidentesTitle_accidentefecha1}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewAccidentesLabel_accidente1}"/>
+                    <h:outputText value="#{accidentesController.selected.accidente1}" title="#{bundle.ViewAccidentesTitle_accidente1}"/>
+                    <h:outputText value="#{bundle.ViewAccidentesLabel_accidentefecha2}"/>
+                    <h:outputText value="#{accidentesController.selected.accidentefecha2}" title="#{bundle.ViewAccidentesTitle_accidentefecha2}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewAccidentesLabel_accidente2}"/>
+                    <h:outputText value="#{accidentesController.selected.accidente2}" title="#{bundle.ViewAccidentesTitle_accidente2}"/>
+                    <h:outputText value="#{bundle.ViewAccidentesLabel_accidentefecha3}"/>
+                    <h:outputText value="#{accidentesController.selected.accidentefecha3}" title="#{bundle.ViewAccidentesTitle_accidentefecha3}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:outputText>
+                    <h:outputText value="#{bundle.ViewAccidentesLabel_accidente3}"/>
+                    <h:outputText value="#{accidentesController.selected.accidente3}" title="#{bundle.ViewAccidentesTitle_accidente3}"/>
+                    <h:outputText value="#{bundle.ViewAccidentesLabel_enfermedadactual}"/>
+                    <h:outputText value="#{accidentesController.selected.enfermedadactual}" title="#{bundle.ViewAccidentesTitle_enfermedadactual}"/>
+                    <h:outputText value="#{bundle.ViewAccidentesLabel_enfermedadetalle}"/>
+                    <h:outputText value="#{accidentesController.selected.enfermedadetalle}" title="#{bundle.ViewAccidentesTitle_enfermedadetalle}"/>
+                    <h:outputText value="#{bundle.ViewAccidentesLabel_datId}"/>
+                    <h:outputText value="#{accidentesController.selected.datId}" title="#{bundle.ViewAccidentesTitle_datId}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{accidentesController.destroyAndView}" value="#{bundle.ViewAccidentesDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewAccidentesEditLink}"/>
+                <br />
+                <h:commandLink action="#{accidentesController.prepareCreate}" value="#{bundle.ViewAccidentesCreateLink}" />
+                <br />
+                <h:commandLink action="#{accidentesController.prepareList}" value="#{bundle.ViewAccidentesShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewAccidentesIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

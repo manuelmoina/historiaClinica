@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditDatosidentificacionTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditDatosidentificacionLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{datosidentificacionController.selected.id}" title="#{bundle.EditDatosidentificacionTitle_id}" required="true" requiredMessage="#{bundle.EditDatosidentificacionRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditDatosidentificacionLabel_ci}" for="ci" />
+                    <h:inputText id="ci" value="#{datosidentificacionController.selected.ci}" title="#{bundle.EditDatosidentificacionTitle_ci}" required="true" requiredMessage="#{bundle.EditDatosidentificacionRequiredMessage_ci}"/>
+                    <h:outputLabel value="#{bundle.EditDatosidentificacionLabel_nombres}" for="nombres" />
+                    <h:inputText id="nombres" value="#{datosidentificacionController.selected.nombres}" title="#{bundle.EditDatosidentificacionTitle_nombres}" />
+                    <h:outputLabel value="#{bundle.EditDatosidentificacionLabel_apellidos}" for="apellidos" />
+                    <h:inputText id="apellidos" value="#{datosidentificacionController.selected.apellidos}" title="#{bundle.EditDatosidentificacionTitle_apellidos}" />
+                    <h:outputLabel value="#{bundle.EditDatosidentificacionLabel_fecha}" for="fecha" />
+                    <h:inputText id="fecha" value="#{datosidentificacionController.selected.fecha}" title="#{bundle.EditDatosidentificacionTitle_fecha}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditDatosidentificacionLabel_edad}" for="edad" />
+                    <h:inputText id="edad" value="#{datosidentificacionController.selected.edad}" title="#{bundle.EditDatosidentificacionTitle_edad}" />
+                    <h:outputLabel value="#{bundle.EditDatosidentificacionLabel_estadocivil}" for="estadocivil" />
+                    <h:inputText id="estadocivil" value="#{datosidentificacionController.selected.estadocivil}" title="#{bundle.EditDatosidentificacionTitle_estadocivil}" />
+                    <h:outputLabel value="#{bundle.EditDatosidentificacionLabel_sexo}" for="sexo" />
+                    <h:inputText id="sexo" value="#{datosidentificacionController.selected.sexo}" title="#{bundle.EditDatosidentificacionTitle_sexo}" />
+                    <h:outputLabel value="#{bundle.EditDatosidentificacionLabel_profesio}" for="profesio" />
+                    <h:inputText id="profesio" value="#{datosidentificacionController.selected.profesio}" title="#{bundle.EditDatosidentificacionTitle_profesio}" />
+                    <h:outputLabel value="#{bundle.EditDatosidentificacionLabel_niveleducativo}" for="niveleducativo" />
+                    <h:inputText id="niveleducativo" value="#{datosidentificacionController.selected.niveleducativo}" title="#{bundle.EditDatosidentificacionTitle_niveleducativo}" />
+                    <h:outputLabel value="#{bundle.EditDatosidentificacionLabel_cargo}" for="cargo" />
+                    <h:inputText id="cargo" value="#{datosidentificacionController.selected.cargo}" title="#{bundle.EditDatosidentificacionTitle_cargo}" />
+                    <h:outputLabel value="#{bundle.EditDatosidentificacionLabel_pais}" for="pais" />
+                    <h:inputText id="pais" value="#{datosidentificacionController.selected.pais}" title="#{bundle.EditDatosidentificacionTitle_pais}" />
+                </h:panelGrid>
+                <h:commandLink action="#{datosidentificacionController.update}" value="#{bundle.EditDatosidentificacionSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditDatosidentificacionViewLink}"/>
+                <br />
+                <h:commandLink action="#{datosidentificacionController.prepareList}" value="#{bundle.EditDatosidentificacionShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditDatosidentificacionIndexLink}" />
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListAntecedenteslaboralesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListAntecedenteslaboralesEmpty}" rendered="#{antecedenteslaboralesController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{antecedenteslaboralesController.items.rowCount > 0}">
+                    <h:outputText value="#{antecedenteslaboralesController.pagination.pageFirstItem + 1}..#{antecedenteslaboralesController.pagination.pageLastItem + 1}/#{antecedenteslaboralesController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{antecedenteslaboralesController.previous}" value="#{bundle.Previous} #{antecedenteslaboralesController.pagination.pageSize}" rendered="#{antecedenteslaboralesController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{antecedenteslaboralesController.next}" value="#{bundle.Next} #{antecedenteslaboralesController.pagination.pageSize}" rendered="#{antecedenteslaboralesController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{antecedenteslaboralesController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedenteslaboralesTitle_id}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.id}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedenteslaboralesTitle_trabajoanterior0}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.trabajoanterior0}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedenteslaboralesTitle_tinicio0}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tinicio0}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedenteslaboralesTitle_tfin0}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tfin0}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedenteslaboralesTitle_triesgo0}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.triesgo0}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedenteslaboralesTitle_tepp0}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tepp0}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedenteslaboralesTitle_trabajoanterior1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.trabajoanterior1}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedenteslaboralesTitle_tinicio1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tinicio1}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedenteslaboralesTitle_tfin1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tfin1}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedenteslaboralesTitle_triesgo1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.triesgo1}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedenteslaboralesTitle_tepp1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tepp1}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedenteslaboralesTitle_trabajoanterior2}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.trabajoanterior2}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedenteslaboralesTitle_tinicio2}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tinicio2}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedenteslaboralesTitle_tfin2}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tfin2}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedenteslaboralesTitle_triesgo2}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.triesgo2}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedenteslaboralesTitle_tepp2}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tepp2}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedenteslaboralesTitle_trabajoanterior3}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.trabajoanterior3}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedenteslaboralesTitle_tinicio3}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tinicio3}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedenteslaboralesTitle_tfin3}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tfin3}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedenteslaboralesTitle_triesgo3}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.triesgo3}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedenteslaboralesTitle_tepp3}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.tepp3}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedenteslaboralesTitle_datId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.datId}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{antecedenteslaboralesController.prepareView}" value="#{bundle.ListAntecedenteslaboralesViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{antecedenteslaboralesController.prepareEdit}" value="#{bundle.ListAntecedenteslaboralesEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{antecedenteslaboralesController.destroy}" value="#{bundle.ListAntecedenteslaboralesDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{antecedenteslaboralesController.prepareCreate}" value="#{bundle.ListAntecedenteslaboralesCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListAntecedenteslaboralesIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

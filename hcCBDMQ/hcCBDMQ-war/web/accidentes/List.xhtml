@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListAccidentesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListAccidentesEmpty}" rendered="#{accidentesController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{accidentesController.items.rowCount > 0}">
+                    <h:outputText value="#{accidentesController.pagination.pageFirstItem + 1}..#{accidentesController.pagination.pageLastItem + 1}/#{accidentesController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{accidentesController.previous}" value="#{bundle.Previous} #{accidentesController.pagination.pageSize}" rendered="#{accidentesController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{accidentesController.next}" value="#{bundle.Next} #{accidentesController.pagination.pageSize}" rendered="#{accidentesController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{accidentesController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAccidentesTitle_id}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.id}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAccidentesTitle_accidentefecha0}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.accidentefecha0}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAccidentesTitle_accidente0}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.accidente0}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAccidentesTitle_accidentefecha1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.accidentefecha1}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAccidentesTitle_accidente1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.accidente1}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAccidentesTitle_accidentefecha2}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.accidentefecha2}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAccidentesTitle_accidente2}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.accidente2}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAccidentesTitle_accidentefecha3}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.accidentefecha3}">
+                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                            </h:outputText>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAccidentesTitle_accidente3}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.accidente3}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAccidentesTitle_enfermedadactual}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.enfermedadactual}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAccidentesTitle_enfermedadetalle}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.enfermedadetalle}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAccidentesTitle_datId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.datId}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{accidentesController.prepareView}" value="#{bundle.ListAccidentesViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{accidentesController.prepareEdit}" value="#{bundle.ListAccidentesEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{accidentesController.destroy}" value="#{bundle.ListAccidentesDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{accidentesController.prepareCreate}" value="#{bundle.ListAccidentesCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListAccidentesIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

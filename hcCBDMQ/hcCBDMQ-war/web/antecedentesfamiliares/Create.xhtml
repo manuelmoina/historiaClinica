@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateAntecedentesfamiliaresTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateAntecedentesfamiliaresLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{antecedentesfamiliaresController.selected.id}" title="#{bundle.CreateAntecedentesfamiliaresTitle_id}" required="true" requiredMessage="#{bundle.CreateAntecedentesfamiliaresRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.CreateAntecedentesfamiliaresLabel_pariente0}" for="pariente0" />
+                    <h:inputText id="pariente0" value="#{antecedentesfamiliaresController.selected.pariente0}" title="#{bundle.CreateAntecedentesfamiliaresTitle_pariente0}" />
+                    <h:outputLabel value="#{bundle.CreateAntecedentesfamiliaresLabel_penfermedad0}" for="penfermedad0" />
+                    <h:inputText id="penfermedad0" value="#{antecedentesfamiliaresController.selected.penfermedad0}" title="#{bundle.CreateAntecedentesfamiliaresTitle_penfermedad0}" />
+                    <h:outputLabel value="#{bundle.CreateAntecedentesfamiliaresLabel_pdetalle0}" for="pdetalle0" />
+                    <h:inputText id="pdetalle0" value="#{antecedentesfamiliaresController.selected.pdetalle0}" title="#{bundle.CreateAntecedentesfamiliaresTitle_pdetalle0}" />
+                    <h:outputLabel value="#{bundle.CreateAntecedentesfamiliaresLabel_pariente1}" for="pariente1" />
+                    <h:inputText id="pariente1" value="#{antecedentesfamiliaresController.selected.pariente1}" title="#{bundle.CreateAntecedentesfamiliaresTitle_pariente1}" />
+                    <h:outputLabel value="#{bundle.CreateAntecedentesfamiliaresLabel_penfermedad1}" for="penfermedad1" />
+                    <h:inputText id="penfermedad1" value="#{antecedentesfamiliaresController.selected.penfermedad1}" title="#{bundle.CreateAntecedentesfamiliaresTitle_penfermedad1}" />
+                    <h:outputLabel value="#{bundle.CreateAntecedentesfamiliaresLabel_pdetalle1}" for="pdetalle1" />
+                    <h:inputText id="pdetalle1" value="#{antecedentesfamiliaresController.selected.pdetalle1}" title="#{bundle.CreateAntecedentesfamiliaresTitle_pdetalle1}" />
+                    <h:outputLabel value="#{bundle.CreateAntecedentesfamiliaresLabel_pariente2}" for="pariente2" />
+                    <h:inputText id="pariente2" value="#{antecedentesfamiliaresController.selected.pariente2}" title="#{bundle.CreateAntecedentesfamiliaresTitle_pariente2}" />
+                    <h:outputLabel value="#{bundle.CreateAntecedentesfamiliaresLabel_penfermedad2}" for="penfermedad2" />
+                    <h:inputText id="penfermedad2" value="#{antecedentesfamiliaresController.selected.penfermedad2}" title="#{bundle.CreateAntecedentesfamiliaresTitle_penfermedad2}" />
+                    <h:outputLabel value="#{bundle.CreateAntecedentesfamiliaresLabel_pdetalle2}" for="pdetalle2" />
+                    <h:inputText id="pdetalle2" value="#{antecedentesfamiliaresController.selected.pdetalle2}" title="#{bundle.CreateAntecedentesfamiliaresTitle_pdetalle2}" />
+                    <h:outputLabel value="#{bundle.CreateAntecedentesfamiliaresLabel_pariente3}" for="pariente3" />
+                    <h:inputText id="pariente3" value="#{antecedentesfamiliaresController.selected.pariente3}" title="#{bundle.CreateAntecedentesfamiliaresTitle_pariente3}" />
+                    <h:outputLabel value="#{bundle.CreateAntecedentesfamiliaresLabel_penfermedad3}" for="penfermedad3" />
+                    <h:inputText id="penfermedad3" value="#{antecedentesfamiliaresController.selected.penfermedad3}" title="#{bundle.CreateAntecedentesfamiliaresTitle_penfermedad3}" />
+                    <h:outputLabel value="#{bundle.CreateAntecedentesfamiliaresLabel_pdetalle3}" for="pdetalle3" />
+                    <h:inputText id="pdetalle3" value="#{antecedentesfamiliaresController.selected.pdetalle3}" title="#{bundle.CreateAntecedentesfamiliaresTitle_pdetalle3}" />
+                    <h:outputLabel value="#{bundle.CreateAntecedentesfamiliaresLabel_datId}" for="datId" />
+                    <h:selectOneMenu id="datId" value="#{antecedentesfamiliaresController.selected.datId}" title="#{bundle.CreateAntecedentesfamiliaresTitle_datId}" >
+                        <f:selectItems value="#{datosidentificacionController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{antecedentesfamiliaresController.create}" value="#{bundle.CreateAntecedentesfamiliaresSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{antecedentesfamiliaresController.prepareList}" value="#{bundle.CreateAntecedentesfamiliaresShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateAntecedentesfamiliaresIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

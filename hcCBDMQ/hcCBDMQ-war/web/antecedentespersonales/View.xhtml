@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewAntecedentespersonalesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewAntecedentespersonalesLabel_id}"/>
+                    <h:outputText value="#{antecedentespersonalesController.selected.id}" title="#{bundle.ViewAntecedentespersonalesTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewAntecedentespersonalesLabel_amedico0}"/>
+                    <h:outputText value="#{antecedentespersonalesController.selected.amedico0}" title="#{bundle.ViewAntecedentespersonalesTitle_amedico0}"/>
+                    <h:outputText value="#{bundle.ViewAntecedentespersonalesLabel_amedico1}"/>
+                    <h:outputText value="#{antecedentespersonalesController.selected.amedico1}" title="#{bundle.ViewAntecedentespersonalesTitle_amedico1}"/>
+                    <h:outputText value="#{bundle.ViewAntecedentespersonalesLabel_amedico2}"/>
+                    <h:outputText value="#{antecedentespersonalesController.selected.amedico2}" title="#{bundle.ViewAntecedentespersonalesTitle_amedico2}"/>
+                    <h:outputText value="#{bundle.ViewAntecedentespersonalesLabel_amedico3}"/>
+                    <h:outputText value="#{antecedentespersonalesController.selected.amedico3}" title="#{bundle.ViewAntecedentespersonalesTitle_amedico3}"/>
+                    <h:outputText value="#{bundle.ViewAntecedentespersonalesLabel_aquirurgico0}"/>
+                    <h:outputText value="#{antecedentespersonalesController.selected.aquirurgico0}" title="#{bundle.ViewAntecedentespersonalesTitle_aquirurgico0}"/>
+                    <h:outputText value="#{bundle.ViewAntecedentespersonalesLabel_aquirurgico1}"/>
+                    <h:outputText value="#{antecedentespersonalesController.selected.aquirurgico1}" title="#{bundle.ViewAntecedentespersonalesTitle_aquirurgico1}"/>
+                    <h:outputText value="#{bundle.ViewAntecedentespersonalesLabel_aquirurgico2}"/>
+                    <h:outputText value="#{antecedentespersonalesController.selected.aquirurgico2}" title="#{bundle.ViewAntecedentespersonalesTitle_aquirurgico2}"/>
+                    <h:outputText value="#{bundle.ViewAntecedentespersonalesLabel_aquirurgico3}"/>
+                    <h:outputText value="#{antecedentespersonalesController.selected.aquirurgico3}" title="#{bundle.ViewAntecedentespersonalesTitle_aquirurgico3}"/>
+                    <h:outputText value="#{bundle.ViewAntecedentespersonalesLabel_alergico}"/>
+                    <h:outputText value="#{antecedentespersonalesController.selected.alergico}" title="#{bundle.ViewAntecedentespersonalesTitle_alergico}"/>
+                    <h:outputText value="#{bundle.ViewAntecedentespersonalesLabel_alergias}"/>
+                    <h:outputText value="#{antecedentespersonalesController.selected.alergias}" title="#{bundle.ViewAntecedentespersonalesTitle_alergias}"/>
+                    <h:outputText value="#{bundle.ViewAntecedentespersonalesLabel_usomedicinadiaria}"/>
+                    <h:outputText value="#{antecedentespersonalesController.selected.usomedicinadiaria}" title="#{bundle.ViewAntecedentespersonalesTitle_usomedicinadiaria}"/>
+                    <h:outputText value="#{bundle.ViewAntecedentespersonalesLabel_nombremedicina}"/>
+                    <h:outputText value="#{antecedentespersonalesController.selected.nombremedicina}" title="#{bundle.ViewAntecedentespersonalesTitle_nombremedicina}"/>
+                    <h:outputText value="#{bundle.ViewAntecedentespersonalesLabel_datId}"/>
+                    <h:outputText value="#{antecedentespersonalesController.selected.datId}" title="#{bundle.ViewAntecedentespersonalesTitle_datId}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{antecedentespersonalesController.destroyAndView}" value="#{bundle.ViewAntecedentespersonalesDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewAntecedentespersonalesEditLink}"/>
+                <br />
+                <h:commandLink action="#{antecedentespersonalesController.prepareCreate}" value="#{bundle.ViewAntecedentespersonalesCreateLink}" />
+                <br />
+                <h:commandLink action="#{antecedentespersonalesController.prepareList}" value="#{bundle.ViewAntecedentespersonalesShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewAntecedentespersonalesIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

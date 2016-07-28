@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewAntecedentesfamiliaresTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewAntecedentesfamiliaresLabel_id}"/>
+                    <h:outputText value="#{antecedentesfamiliaresController.selected.id}" title="#{bundle.ViewAntecedentesfamiliaresTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewAntecedentesfamiliaresLabel_pariente0}"/>
+                    <h:outputText value="#{antecedentesfamiliaresController.selected.pariente0}" title="#{bundle.ViewAntecedentesfamiliaresTitle_pariente0}"/>
+                    <h:outputText value="#{bundle.ViewAntecedentesfamiliaresLabel_penfermedad0}"/>
+                    <h:outputText value="#{antecedentesfamiliaresController.selected.penfermedad0}" title="#{bundle.ViewAntecedentesfamiliaresTitle_penfermedad0}"/>
+                    <h:outputText value="#{bundle.ViewAntecedentesfamiliaresLabel_pdetalle0}"/>
+                    <h:outputText value="#{antecedentesfamiliaresController.selected.pdetalle0}" title="#{bundle.ViewAntecedentesfamiliaresTitle_pdetalle0}"/>
+                    <h:outputText value="#{bundle.ViewAntecedentesfamiliaresLabel_pariente1}"/>
+                    <h:outputText value="#{antecedentesfamiliaresController.selected.pariente1}" title="#{bundle.ViewAntecedentesfamiliaresTitle_pariente1}"/>
+                    <h:outputText value="#{bundle.ViewAntecedentesfamiliaresLabel_penfermedad1}"/>
+                    <h:outputText value="#{antecedentesfamiliaresController.selected.penfermedad1}" title="#{bundle.ViewAntecedentesfamiliaresTitle_penfermedad1}"/>
+                    <h:outputText value="#{bundle.ViewAntecedentesfamiliaresLabel_pdetalle1}"/>
+                    <h:outputText value="#{antecedentesfamiliaresController.selected.pdetalle1}" title="#{bundle.ViewAntecedentesfamiliaresTitle_pdetalle1}"/>
+                    <h:outputText value="#{bundle.ViewAntecedentesfamiliaresLabel_pariente2}"/>
+                    <h:outputText value="#{antecedentesfamiliaresController.selected.pariente2}" title="#{bundle.ViewAntecedentesfamiliaresTitle_pariente2}"/>
+                    <h:outputText value="#{bundle.ViewAntecedentesfamiliaresLabel_penfermedad2}"/>
+                    <h:outputText value="#{antecedentesfamiliaresController.selected.penfermedad2}" title="#{bundle.ViewAntecedentesfamiliaresTitle_penfermedad2}"/>
+                    <h:outputText value="#{bundle.ViewAntecedentesfamiliaresLabel_pdetalle2}"/>
+                    <h:outputText value="#{antecedentesfamiliaresController.selected.pdetalle2}" title="#{bundle.ViewAntecedentesfamiliaresTitle_pdetalle2}"/>
+                    <h:outputText value="#{bundle.ViewAntecedentesfamiliaresLabel_pariente3}"/>
+                    <h:outputText value="#{antecedentesfamiliaresController.selected.pariente3}" title="#{bundle.ViewAntecedentesfamiliaresTitle_pariente3}"/>
+                    <h:outputText value="#{bundle.ViewAntecedentesfamiliaresLabel_penfermedad3}"/>
+                    <h:outputText value="#{antecedentesfamiliaresController.selected.penfermedad3}" title="#{bundle.ViewAntecedentesfamiliaresTitle_penfermedad3}"/>
+                    <h:outputText value="#{bundle.ViewAntecedentesfamiliaresLabel_pdetalle3}"/>
+                    <h:outputText value="#{antecedentesfamiliaresController.selected.pdetalle3}" title="#{bundle.ViewAntecedentesfamiliaresTitle_pdetalle3}"/>
+                    <h:outputText value="#{bundle.ViewAntecedentesfamiliaresLabel_datId}"/>
+                    <h:outputText value="#{antecedentesfamiliaresController.selected.datId}" title="#{bundle.ViewAntecedentesfamiliaresTitle_datId}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{antecedentesfamiliaresController.destroyAndView}" value="#{bundle.ViewAntecedentesfamiliaresDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewAntecedentesfamiliaresEditLink}"/>
+                <br />
+                <h:commandLink action="#{antecedentesfamiliaresController.prepareCreate}" value="#{bundle.ViewAntecedentesfamiliaresCreateLink}" />
+                <br />
+                <h:commandLink action="#{antecedentesfamiliaresController.prepareList}" value="#{bundle.ViewAntecedentesfamiliaresShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewAntecedentesfamiliaresIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateHabitosTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateHabitosLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{habitosController.selected.id}" title="#{bundle.CreateHabitosTitle_id}" required="true" requiredMessage="#{bundle.CreateHabitosRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.CreateHabitosLabel_cigarrillohz}" for="cigarrillohz" />
+                    <h:inputText id="cigarrillohz" value="#{habitosController.selected.cigarrillohz}" title="#{bundle.CreateHabitosTitle_cigarrillohz}" />
+                    <h:outputLabel value="#{bundle.CreateHabitosLabel_cigarrilloinicio}" for="cigarrilloinicio" />
+                    <h:inputText id="cigarrilloinicio" value="#{habitosController.selected.cigarrilloinicio}" title="#{bundle.CreateHabitosTitle_cigarrilloinicio}" />
+                    <h:outputLabel value="#{bundle.CreateHabitosLabel_cigarrillofin}" for="cigarrillofin" />
+                    <h:inputText id="cigarrillofin" value="#{habitosController.selected.cigarrillofin}" title="#{bundle.CreateHabitosTitle_cigarrillofin}" />
+                    <h:outputLabel value="#{bundle.CreateHabitosLabel_cigarrillodetalle}" for="cigarrillodetalle" />
+                    <h:inputText id="cigarrillodetalle" value="#{habitosController.selected.cigarrillodetalle}" title="#{bundle.CreateHabitosTitle_cigarrillodetalle}" />
+                    <h:outputLabel value="#{bundle.CreateHabitosLabel_alcoholhz}" for="alcoholhz" />
+                    <h:inputText id="alcoholhz" value="#{habitosController.selected.alcoholhz}" title="#{bundle.CreateHabitosTitle_alcoholhz}" />
+                    <h:outputLabel value="#{bundle.CreateHabitosLabel_alcoholinicio}" for="alcoholinicio" />
+                    <h:inputText id="alcoholinicio" value="#{habitosController.selected.alcoholinicio}" title="#{bundle.CreateHabitosTitle_alcoholinicio}" />
+                    <h:outputLabel value="#{bundle.CreateHabitosLabel_alcoholfin}" for="alcoholfin" />
+                    <h:inputText id="alcoholfin" value="#{habitosController.selected.alcoholfin}" title="#{bundle.CreateHabitosTitle_alcoholfin}" />
+                    <h:outputLabel value="#{bundle.CreateHabitosLabel_alcoholdetalle}" for="alcoholdetalle" />
+                    <h:inputText id="alcoholdetalle" value="#{habitosController.selected.alcoholdetalle}" title="#{bundle.CreateHabitosTitle_alcoholdetalle}" />
+                    <h:outputLabel value="#{bundle.CreateHabitosLabel_droganombre0}" for="droganombre0" />
+                    <h:inputText id="droganombre0" value="#{habitosController.selected.droganombre0}" title="#{bundle.CreateHabitosTitle_droganombre0}" />
+                    <h:outputLabel value="#{bundle.CreateHabitosLabel_drogainicio0}" for="drogainicio0" />
+                    <h:inputText id="drogainicio0" value="#{habitosController.selected.drogainicio0}" title="#{bundle.CreateHabitosTitle_drogainicio0}" />
+                    <h:outputLabel value="#{bundle.CreateHabitosLabel_drogafin0}" for="drogafin0" />
+                    <h:inputText id="drogafin0" value="#{habitosController.selected.drogafin0}" title="#{bundle.CreateHabitosTitle_drogafin0}" />
+                    <h:outputLabel value="#{bundle.CreateHabitosLabel_drogadetalle0}" for="drogadetalle0" />
+                    <h:inputText id="drogadetalle0" value="#{habitosController.selected.drogadetalle0}" title="#{bundle.CreateHabitosTitle_drogadetalle0}" />
+                    <h:outputLabel value="#{bundle.CreateHabitosLabel_droganombre1}" for="droganombre1" />
+                    <h:inputText id="droganombre1" value="#{habitosController.selected.droganombre1}" title="#{bundle.CreateHabitosTitle_droganombre1}" />
+                    <h:outputLabel value="#{bundle.CreateHabitosLabel_drogainicio1}" for="drogainicio1" />
+                    <h:inputText id="drogainicio1" value="#{habitosController.selected.drogainicio1}" title="#{bundle.CreateHabitosTitle_drogainicio1}" />
+                    <h:outputLabel value="#{bundle.CreateHabitosLabel_drogafin1}" for="drogafin1" />
+                    <h:inputText id="drogafin1" value="#{habitosController.selected.drogafin1}" title="#{bundle.CreateHabitosTitle_drogafin1}" />
+                    <h:outputLabel value="#{bundle.CreateHabitosLabel_drogadetalle1}" for="drogadetalle1" />
+                    <h:inputText id="drogadetalle1" value="#{habitosController.selected.drogadetalle1}" title="#{bundle.CreateHabitosTitle_drogadetalle1}" />
+                    <h:outputLabel value="#{bundle.CreateHabitosLabel_droganombre2}" for="droganombre2" />
+                    <h:inputText id="droganombre2" value="#{habitosController.selected.droganombre2}" title="#{bundle.CreateHabitosTitle_droganombre2}" />
+                    <h:outputLabel value="#{bundle.CreateHabitosLabel_drogainicio2}" for="drogainicio2" />
+                    <h:inputText id="drogainicio2" value="#{habitosController.selected.drogainicio2}" title="#{bundle.CreateHabitosTitle_drogainicio2}" />
+                    <h:outputLabel value="#{bundle.CreateHabitosLabel_drogafin2}" for="drogafin2" />
+                    <h:inputText id="drogafin2" value="#{habitosController.selected.drogafin2}" title="#{bundle.CreateHabitosTitle_drogafin2}" />
+                    <h:outputLabel value="#{bundle.CreateHabitosLabel_drogadetalle2}" for="drogadetalle2" />
+                    <h:inputText id="drogadetalle2" value="#{habitosController.selected.drogadetalle2}" title="#{bundle.CreateHabitosTitle_drogadetalle2}" />
+                    <h:outputLabel value="#{bundle.CreateHabitosLabel_datId}" for="datId" />
+                    <h:selectOneMenu id="datId" value="#{habitosController.selected.datId}" title="#{bundle.CreateHabitosTitle_datId}" >
+                        <f:selectItems value="#{datosidentificacionController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{habitosController.create}" value="#{bundle.CreateHabitosSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{habitosController.prepareList}" value="#{bundle.CreateHabitosShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateHabitosIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

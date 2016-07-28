@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewExposicionesimportantesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewExposicionesimportantesLabel_id}"/>
+                    <h:outputText value="#{exposicionesimportantesController.selected.id}" title="#{bundle.ViewExposicionesimportantesTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewExposicionesimportantesLabel_agente0}"/>
+                    <h:outputText value="#{exposicionesimportantesController.selected.agente0}" title="#{bundle.ViewExposicionesimportantesTitle_agente0}"/>
+                    <h:outputText value="#{bundle.ViewExposicionesimportantesLabel_agentedetalle0}"/>
+                    <h:outputText value="#{exposicionesimportantesController.selected.agentedetalle0}" title="#{bundle.ViewExposicionesimportantesTitle_agentedetalle0}"/>
+                    <h:outputText value="#{bundle.ViewExposicionesimportantesLabel_agente1}"/>
+                    <h:outputText value="#{exposicionesimportantesController.selected.agente1}" title="#{bundle.ViewExposicionesimportantesTitle_agente1}"/>
+                    <h:outputText value="#{bundle.ViewExposicionesimportantesLabel_agentedetalle1}"/>
+                    <h:outputText value="#{exposicionesimportantesController.selected.agentedetalle1}" title="#{bundle.ViewExposicionesimportantesTitle_agentedetalle1}"/>
+                    <h:outputText value="#{bundle.ViewExposicionesimportantesLabel_agente2}"/>
+                    <h:outputText value="#{exposicionesimportantesController.selected.agente2}" title="#{bundle.ViewExposicionesimportantesTitle_agente2}"/>
+                    <h:outputText value="#{bundle.ViewExposicionesimportantesLabel_agentedetalle2}"/>
+                    <h:outputText value="#{exposicionesimportantesController.selected.agentedetalle2}" title="#{bundle.ViewExposicionesimportantesTitle_agentedetalle2}"/>
+                    <h:outputText value="#{bundle.ViewExposicionesimportantesLabel_agente3}"/>
+                    <h:outputText value="#{exposicionesimportantesController.selected.agente3}" title="#{bundle.ViewExposicionesimportantesTitle_agente3}"/>
+                    <h:outputText value="#{bundle.ViewExposicionesimportantesLabel_agentedetalle3}"/>
+                    <h:outputText value="#{exposicionesimportantesController.selected.agentedetalle3}" title="#{bundle.ViewExposicionesimportantesTitle_agentedetalle3}"/>
+                    <h:outputText value="#{bundle.ViewExposicionesimportantesLabel_datId}"/>
+                    <h:outputText value="#{exposicionesimportantesController.selected.datId}" title="#{bundle.ViewExposicionesimportantesTitle_datId}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{exposicionesimportantesController.destroyAndView}" value="#{bundle.ViewExposicionesimportantesDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewExposicionesimportantesEditLink}"/>
+                <br />
+                <h:commandLink action="#{exposicionesimportantesController.prepareCreate}" value="#{bundle.ViewExposicionesimportantesCreateLink}" />
+                <br />
+                <h:commandLink action="#{exposicionesimportantesController.prepareList}" value="#{bundle.ViewExposicionesimportantesShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewExposicionesimportantesIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

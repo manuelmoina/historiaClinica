@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListAntecedentespersonalesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListAntecedentespersonalesEmpty}" rendered="#{antecedentespersonalesController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{antecedentespersonalesController.items.rowCount > 0}">
+                    <h:outputText value="#{antecedentespersonalesController.pagination.pageFirstItem + 1}..#{antecedentespersonalesController.pagination.pageLastItem + 1}/#{antecedentespersonalesController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{antecedentespersonalesController.previous}" value="#{bundle.Previous} #{antecedentespersonalesController.pagination.pageSize}" rendered="#{antecedentespersonalesController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{antecedentespersonalesController.next}" value="#{bundle.Next} #{antecedentespersonalesController.pagination.pageSize}" rendered="#{antecedentespersonalesController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{antecedentespersonalesController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedentespersonalesTitle_id}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.id}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedentespersonalesTitle_amedico0}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.amedico0}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedentespersonalesTitle_amedico1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.amedico1}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedentespersonalesTitle_amedico2}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.amedico2}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedentespersonalesTitle_amedico3}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.amedico3}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedentespersonalesTitle_aquirurgico0}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.aquirurgico0}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedentespersonalesTitle_aquirurgico1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.aquirurgico1}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedentespersonalesTitle_aquirurgico2}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.aquirurgico2}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedentespersonalesTitle_aquirurgico3}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.aquirurgico3}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedentespersonalesTitle_alergico}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.alergico}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedentespersonalesTitle_alergias}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.alergias}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedentespersonalesTitle_usomedicinadiaria}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.usomedicinadiaria}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedentespersonalesTitle_nombremedicina}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.nombremedicina}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListAntecedentespersonalesTitle_datId}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.datId}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{antecedentespersonalesController.prepareView}" value="#{bundle.ListAntecedentespersonalesViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{antecedentespersonalesController.prepareEdit}" value="#{bundle.ListAntecedentespersonalesEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{antecedentespersonalesController.destroy}" value="#{bundle.ListAntecedentespersonalesDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{antecedentespersonalesController.prepareCreate}" value="#{bundle.ListAntecedentespersonalesCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListAntecedentespersonalesIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

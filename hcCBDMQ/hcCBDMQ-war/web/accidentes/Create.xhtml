@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateAccidentesTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateAccidentesLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{accidentesController.selected.id}" title="#{bundle.CreateAccidentesTitle_id}" required="true" requiredMessage="#{bundle.CreateAccidentesRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.CreateAccidentesLabel_accidentefecha0}" for="accidentefecha0" />
+                    <h:inputText id="accidentefecha0" value="#{accidentesController.selected.accidentefecha0}" title="#{bundle.CreateAccidentesTitle_accidentefecha0}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateAccidentesLabel_accidente0}" for="accidente0" />
+                    <h:inputText id="accidente0" value="#{accidentesController.selected.accidente0}" title="#{bundle.CreateAccidentesTitle_accidente0}" />
+                    <h:outputLabel value="#{bundle.CreateAccidentesLabel_accidentefecha1}" for="accidentefecha1" />
+                    <h:inputText id="accidentefecha1" value="#{accidentesController.selected.accidentefecha1}" title="#{bundle.CreateAccidentesTitle_accidentefecha1}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateAccidentesLabel_accidente1}" for="accidente1" />
+                    <h:inputText id="accidente1" value="#{accidentesController.selected.accidente1}" title="#{bundle.CreateAccidentesTitle_accidente1}" />
+                    <h:outputLabel value="#{bundle.CreateAccidentesLabel_accidentefecha2}" for="accidentefecha2" />
+                    <h:inputText id="accidentefecha2" value="#{accidentesController.selected.accidentefecha2}" title="#{bundle.CreateAccidentesTitle_accidentefecha2}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateAccidentesLabel_accidente2}" for="accidente2" />
+                    <h:inputText id="accidente2" value="#{accidentesController.selected.accidente2}" title="#{bundle.CreateAccidentesTitle_accidente2}" />
+                    <h:outputLabel value="#{bundle.CreateAccidentesLabel_accidentefecha3}" for="accidentefecha3" />
+                    <h:inputText id="accidentefecha3" value="#{accidentesController.selected.accidentefecha3}" title="#{bundle.CreateAccidentesTitle_accidentefecha3}" >
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.CreateAccidentesLabel_accidente3}" for="accidente3" />
+                    <h:inputText id="accidente3" value="#{accidentesController.selected.accidente3}" title="#{bundle.CreateAccidentesTitle_accidente3}" />
+                    <h:outputLabel value="#{bundle.CreateAccidentesLabel_enfermedadactual}" for="enfermedadactual" />
+                    <h:inputText id="enfermedadactual" value="#{accidentesController.selected.enfermedadactual}" title="#{bundle.CreateAccidentesTitle_enfermedadactual}" />
+                    <h:outputLabel value="#{bundle.CreateAccidentesLabel_enfermedadetalle}" for="enfermedadetalle" />
+                    <h:inputText id="enfermedadetalle" value="#{accidentesController.selected.enfermedadetalle}" title="#{bundle.CreateAccidentesTitle_enfermedadetalle}" />
+                    <h:outputLabel value="#{bundle.CreateAccidentesLabel_datId}" for="datId" />
+                    <h:selectOneMenu id="datId" value="#{accidentesController.selected.datId}" title="#{bundle.CreateAccidentesTitle_datId}" >
+                        <f:selectItems value="#{datosidentificacionController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{accidentesController.create}" value="#{bundle.CreateAccidentesSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{accidentesController.prepareList}" value="#{bundle.CreateAccidentesShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateAccidentesIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
