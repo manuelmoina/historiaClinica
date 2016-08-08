@@ -6,9 +6,11 @@
 
 package beans;
 
+import entidades.Antecedentespersonales;
 import entidades.Datosidentificacion;
 import entidades.Empleado;
 import entidades.Entidades;
+import entidades.Habitos;
 import entidades.VDistributivoAcutal;
 import facades.EntidadesFacadeLocal;
 import facades.VDistributivoAcutalFacadeLocal;
@@ -42,6 +44,38 @@ public class logicaBean {
     private Date fechaActual;
     private String cargo;
     private String area;
+    
+    private Antecedentespersonales ap ;
+    private Habitos habitos;
+
+    public Habitos getHabitos() {
+        if(habitos == null){
+            habitos = new Habitos();
+            habitos.setDatId(datosActual);
+            
+        }
+        return habitos;
+    }
+
+    public void setHabitos(Habitos habitos) {
+        this.habitos = habitos;
+    }
+    
+
+    public Antecedentespersonales getAp() {
+        if(ap == null){
+            ap = new Antecedentespersonales();
+            ap.setIddatosidentificacion(datosActual);
+            
+        }
+        return ap;
+    }
+
+    public void setAp(Antecedentespersonales ap) {
+        this.ap = ap;
+    }
+    
+    
 
     public String getArea() {
         return area;
