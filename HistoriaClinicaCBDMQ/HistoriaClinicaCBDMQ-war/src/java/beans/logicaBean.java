@@ -7,6 +7,7 @@
 package beans;
 
 import entidades.Antecedentespersonales;
+import entidades.Antropometria;
 import entidades.Datosidentificacion;
 import entidades.Empleado;
 import entidades.Entidades;
@@ -47,6 +48,20 @@ public class logicaBean {
     
     private Antecedentespersonales ap ;
     private Habitos habitos;
+    private Antropometria antropometría;
+
+    public Antropometria getAntropometría() {
+        if(antropometría == null){
+            antropometría.setIddatosidentificacion(datosActual);
+        }
+        return antropometría;
+    }
+
+    public void setAntropometría(Antropometria antropometría) {
+        this.antropometría = antropometría;
+    }
+    
+    
 
     public Habitos getHabitos() {
         if(habitos == null){
