@@ -1,0 +1,301 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns="http://www.w3.org/1999/xhtml"
+                template="./plantilla.xhtml"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:define name="top">
+        
+    </ui:define>
+
+    <ui:define name="left">
+        
+    </ui:define>
+
+    <ui:define name="content">
+    <h:form id="form-ficha">
+        
+        <h3 style="text-align: center;">SERVICIO MEDICO DE EMPRESA</h3>
+        <h4 style="text-align: center;">FICHA PREOCUPACIONAL</h4>
+        
+        <p:panelGrid id="panel-ficha" style="margin-top:20px; width: 100%;">
+    <f:facet name="header">
+        <p:row>
+            <p:column colspan="9" style="font-weight: bold;"><h:outputText value="DATOS DE IDENTIFICACIÓN"/></p:column>
+        </p:row>
+    </f:facet>
+    
+    <p:row>
+            <p:column colspan="1"  style="font-weight: bold;"><h:outputText value="C. IDENTIDAD / PASAPORTE"/></p:column>
+            <p:column colspan="1"><p:inputText value="#{logicaBean.cedula}" style="width: 100%;">
+                    <p:ajax event="change" listener="#{logicaBean.buscarPersonal(logicaBean.cedula)}" update="panel-ficha"/>
+                </p:inputText></p:column>     
+    </p:row>
+ 
+    <p:row>
+        <p:column style="font-weight: bold;" ><h:outputText value="FECHA: "/></p:column>
+        <p:column ><p:calendar value="#{logicaBean.fechaActual}"/></p:column>
+        <p:column colspan="3"></p:column>
+        <p:column style="font-weight: bold;" ><h:outputText value="EMPRESA: "/></p:column>
+        <p:column colspan="2" ><h:outputText value="CBDMQ"/></p:column>
+    </p:row>
+    
+    <p:row>
+        <p:column style="font-weight: bold;" ><h:outputText value="NOMBRES: "/></p:column>
+        <p:column colspan="3"><p:inputText value="#{logicaBean.datosActual.entidad.nombres}" style="width: 100%;"/></p:column>
+        <p:column style="font-weight: bold;" ><h:outputText value="APELLIDOS: "/></p:column>
+        <p:column colspan="3"><p:inputText value="#{logicaBean.datosActual.entidad.apellidos}" style="width: 100%;"/></p:column>
+    </p:row>  
+    
+    
+    <p:row>
+        <p:column style="font-weight: bold;" ><h:outputText value="LUGAR DE NACIMIENTO: "/></p:column>
+        <p:column style="font-weight: bold;" ><h:outputText value="CIUDAD: "/></p:column>
+        <p:column colspan="2"><p:inputText style="width: 100%;"/></p:column>
+        <p:column style="font-weight: bold;" ><h:outputText value="PAIS: "/></p:column>
+        <p:column colspan="3"><p:inputText style="width: 100%;"/></p:column>
+    </p:row>  
+    
+    
+ 
+    <p:row>
+        <p:column style="font-weight: bold;" rowspan="2"><h:outputText value="FECHA DE NACIMIENTO: "/></p:column>
+        <p:column  rowspan="2"><p:calendar value="#{logicaBean.datosActual.entidad.fecha}" pattern="dd/MM/yyyy" style="width: 100%;"/></p:column>
+         <p:column style="font-weight: bold;" colspan="2" rowspan="2"></p:column>
+        <p:column style="font-weight: bold;" ><h:outputText value="EDAD "/></p:column>
+        <p:column ><p:inputText  value="#{logicaBean.edad}" style="width: 100%;"/></p:column>
+        <p:column style="font-weight: bold;" ><h:outputText value="SEXO: "/></p:column>
+        <p:column ><p:inputText value="#{logicaBean.sexo}" style="width: 100%;"/></p:column>  
+    </p:row>  
+    <p:row>            
+        <p:column style="font-weight: bold;" ><h:outputText value="ESTADO CIVIL: "/></p:column>
+        <p:column colspan="3"><p:inputText style="width: 100%;"/></p:column>
+    </p:row>  
+    <p:row>            
+        <p:column style="font-weight: bold;" ><h:outputText value="NIVEL EDUCATIVO: "/></p:column>
+        <p:column colspan="3"><p:inputText style="width: 100%;"/></p:column>
+        <p:column style="font-weight: bold;" ><h:outputText value="PROFESIÓN: "/></p:column>
+        <p:column colspan="3"><p:inputText style="width: 100%;"/></p:column>
+    </p:row>  
+    <p:row>            
+        <p:column style="font-weight: bold;" ><h:outputText value="CARGO A DESEMPEÑAR: "/></p:column>
+        <p:column colspan="3"><p:inputText value="#{logicaBean.cargo}" style="width: 100%;"/></p:column>
+        <p:column style="font-weight: bold;" ><h:outputText value="ÁREA: "/></p:column>
+        <p:column ><p:inputText  value="#{logicaBean.area}" style="width: 100%;"/></p:column>
+        <p:column style="font-weight: bold;" ><h:outputText value="MÁQUINA: "/></p:column>
+        <p:column ><p:inputText style="width: 100%;"/></p:column>
+    </p:row>  
+    
+    <p:row>
+        <p:column colspan="9" styleClass="ui-widget-header" style="text-align: center;">
+            <h:outputText  value="ANTECEDENTES PERSONALES"/>
+        </p:column>
+    </p:row>
+ 
+    <p:row>
+      <p:column style="font-weight: bold;" rowspan="4"><h:outputText value="ANTECEDENTES MÉDICOS "/></p:column>
+      <p:column colspan="3"> 1 <p:inputText style="width: 90%; float: right;"/></p:column>  
+      <p:column style="font-weight: bold;" rowspan="4"><h:outputText value="QUIRURGICOS "/></p:column>
+      <p:column colspan="3">1 <p:inputText style="width: 90%; float: right;"/></p:column>        
+    </p:row>
+    <p:row>
+     <p:column colspan="3"> 2 <p:inputText style="width: 90%; float: right;"/></p:column>  
+     <p:column colspan="3"> 2 <p:inputText style="width: 90%; float: right;"/></p:column>  
+    </p:row>
+    <p:row>
+     <p:column colspan="3"> 3 <p:inputText style="width: 90%; float: right;"/></p:column>  
+     <p:column colspan="3"> 3 <p:inputText style="width: 90%; float: right;"/></p:column>  
+    </p:row>
+    <p:row>
+     <p:column colspan="3"> 4 <p:inputText style="width: 90%; float: right;"/></p:column>  
+     <p:column colspan="3"> 4 <p:inputText style="width: 90%; float: right;"/></p:column>  
+    </p:row>
+    
+    <p:row>
+      <p:column style="font-weight: bold;" rowspan="2"><h:outputText value="ALERGIAS"/></p:column>
+      <p:column colspan="3"><p:inputText style="width: 100%;"/></p:column>  
+      <p:column style="font-weight: bold;" rowspan="2"><h:outputText value="USO DE MEDICINA DIARIA "/></p:column>
+      <p:column colspan="3"><p:inputText style="width: 100%;"/></p:column>        
+    </p:row>
+    <p:row>
+      <p:column colspan="3"><p:inputText style="width: 100%;"/></p:column>  
+      <p:column colspan="3"><p:inputText style="width: 100%;"/></p:column>        
+    </p:row>    
+    
+    <p:row>
+        <p:column colspan="9" styleClass="ui-widget-header" style="text-align: center;">
+            <h:outputText  value="HÁBITOS"/>
+        </p:column>
+    </p:row>
+    
+     <p:row>
+        <p:column ></p:column>
+        <p:column colspan="2" style="font-weight: bold;" ><h:outputText value="FRECUENCIA "/></p:column>
+        <p:column colspan="2" style="font-weight: bold;" ><h:outputText value="DESDE (EDAD EN AÑOS) "/></p:column>
+        <p:column colspan="2" style="font-weight: bold;" ><h:outputText value="HASTA "/></p:column>
+        <p:column colspan="2" style="font-weight: bold;" ><h:outputText value="OBSERVACIONES "/></p:column>
+    </p:row>
+     <p:row>
+         <p:column style="font-weight: bold;"><h:outputText value="CIGARRILLO"/></p:column>
+         <p:column colspan="2" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>
+         <p:column colspan="2" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>
+         <p:column colspan="2" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>
+         <p:column colspan="2" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>  
+    </p:row>    
+     <p:row>
+         <p:column style="font-weight: bold;"><h:outputText value="LICOR"/></p:column>
+         <p:column colspan="2" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>
+         <p:column colspan="2" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>
+         <p:column colspan="2" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>
+         <p:column colspan="2" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>  
+    </p:row>    
+        
+     <p:row>
+         <p:column rowspan="4" style="font-weight: bold;"><h:outputText value="DROGAS"/></p:column>
+         <p:column colspan="2" style="font-weight: bold; text-align: center;"><h:outputText value="NOMBRE"/></p:column>
+          <p:column colspan="6" style="font-weight: bold;"></p:column>
+    </p:row>    
+    <p:row>
+         <p:column colspan="2" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>
+         <p:column colspan="2" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>
+         <p:column colspan="2" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>
+         <p:column colspan="2" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>  
+    </p:row>   
+    <p:row>
+         <p:column colspan="2" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>
+         <p:column colspan="2" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>
+         <p:column colspan="2" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>
+         <p:column colspan="2" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>  
+    </p:row>     
+     <p:row>
+         <p:column colspan="2" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>
+         <p:column colspan="2" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>
+         <p:column colspan="2" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>
+         <p:column colspan="2" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>  
+    </p:row>
+    
+    
+     <p:row>
+        <p:column colspan="9" styleClass="ui-widget-header" style="text-align: center;">
+            <h:outputText  value="ANTECEDENTES FAMILIARES"/>
+        </p:column>
+    </p:row>
+ 
+    <p:row>
+        <p:column style="font-weight: bold; text-align: center;" colspan="3"><h:outputText value="PARENTESCO"/></p:column>
+      <p:column style="font-weight: bold; text-align: center;" colspan="3"><h:outputText value="ENFERMEDAD "/></p:column>
+      <p:column style="font-weight: bold; text-align: center;" colspan="3"><h:outputText value="OBSERVACIONES "/></p:column>     
+    </p:row>
+    <p:row>
+     <p:column colspan="3"><p:inputText style="width: 100%;"/></p:column>  
+     <p:column colspan="3"><p:inputText style="width: 100%;"/></p:column>  
+     <p:column colspan="3"><p:inputText style="width: 100%;"/></p:column>  
+    </p:row>
+    <p:row>
+     <p:column colspan="3"><p:inputText style="width: 100%;"/></p:column>  
+     <p:column colspan="3"><p:inputText style="width: 100%;"/></p:column>  
+     <p:column colspan="3"><p:inputText style="width: 100%;"/></p:column>  
+    </p:row>
+    <p:row>
+     <p:column colspan="3"><p:inputText style="width: 100%;"/></p:column>  
+     <p:column colspan="3"><p:inputText style="width: 100%;"/></p:column>  
+     <p:column colspan="3"><p:inputText style="width: 100%;"/></p:column>  
+    </p:row>
+
+         <p:row>
+        <p:column colspan="9" styleClass="ui-widget-header" style="text-align: center;">
+            <h:outputText  value="ANTECEDENTES LABORALES"/>
+        </p:column>
+    </p:row>
+ 
+    <p:row>
+        <p:column style="font-weight: bold; text-align: center;" rowspan="2" colspan="2"><h:outputText value="EMPRESA / TRABAJO"/></p:column>
+        <p:column style="font-weight: bold; text-align: center;"  colspan="1"><h:outputText value="INGRESO "/></p:column>
+      <p:column style="font-weight: bold; text-align: center;" colspan="1"><h:outputText value="SALIDA"/></p:column>     
+       <p:column style="font-weight: bold; text-align: center;" rowspan="2" colspan="2"><h:outputText value="RIESGO AL QUE SE EXPUSO"/></p:column>
+       <p:column style="font-weight: bold; text-align: center;" rowspan="2" colspan="2"><h:outputText value="TIEMPO DE EXPOSICIÓN(años)"/></p:column>
+       <p:column style="font-weight: bold; text-align: center;" rowspan="2" colspan="1"><h:outputText value="EPP"/></p:column>
+    </p:row>  
+    <p:row>
+        <p:column style="font-weight: bold; text-align: center;"  colspan="2"><h:outputText value="FECHA"/></p:column>
+    </p:row>
+    <p:row>
+     <p:column colspan="2"><p:inputText style="width: 100%;"/></p:column>  
+     <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column>  
+     <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column>  
+     <p:column colspan="2"><p:inputText style="width: 100%;"/></p:column>  
+     <p:column colspan="2"><p:inputText style="width: 100%;"/></p:column>  
+     <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column>  
+    </p:row> 
+    <p:row>
+     <p:column colspan="2"><p:inputText style="width: 100%;"/></p:column>  
+     <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column>  
+     <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column>  
+     <p:column colspan="2"><p:inputText style="width: 100%;"/></p:column>  
+     <p:column colspan="2"><p:inputText style="width: 100%;"/></p:column>  
+     <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column>  
+    </p:row> 
+    <p:row>
+     <p:column colspan="2"><p:inputText style="width: 100%;"/></p:column>  
+     <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column>  
+     <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column>  
+     <p:column colspan="2"><p:inputText style="width: 100%;"/></p:column>  
+     <p:column colspan="2"><p:inputText style="width: 100%;"/></p:column>  
+     <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column>  
+    </p:row> 
+    <p:row>
+     <p:column colspan="2"><p:inputText style="width: 100%;"/></p:column>  
+     <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column>  
+     <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column>  
+     <p:column colspan="2"><p:inputText style="width: 100%;"/></p:column>  
+     <p:column colspan="2"><p:inputText style="width: 100%;"/></p:column>  
+     <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column>  
+    </p:row> 
+
+    <p:row>
+        <p:column colspan="9" styleClass="ui-widget-header" style="text-align: center;">
+            <h:outputText  value="OTRAS EXPOSICIONES DE IMPORTANCIA"/>
+        </p:column>
+    </p:row>
+    
+    <p:row>
+        <p:column style="font-weight: bold; text-align: center;"  colspan="2"><h:outputText value="AGENTE"/></p:column>
+        <p:column style="font-weight: bold; text-align: center;"  colspan="3"><h:outputText value="DETALLE (detonaciones, químicos, etc)"/></p:column>
+      <p:column style="font-weight: bold; text-align: center;" colspan="1"><h:outputText value="FECHA"/></p:column>     
+        <p:column style="font-weight: bold; text-align: center;" colspan="3"><h:outputText value="DETALLE"/></p:column>
+    </p:row>  
+    
+    <f:facet name="footer">
+        <p:row>
+            <p:column  colspan="4" style="text-align: right">
+                Finals MVP
+            </p:column>
+            <p:column  colspan="3" rowspan="3">
+                Michael Jordan (Chicago)
+            </p:column>
+        </p:row>
+ 
+        <p:row>
+            <p:column  colspan="4" style="text-align: right">
+                Season MVP
+            </p:column>
+        </p:row>
+        <p:row>
+            <p:column  colspan="4" style="text-align: right">
+                Top Scorer
+            </p:column>
+        </p:row>
+    </f:facet>
+</p:panelGrid>
+        
+    </h:form>
+    </ui:define>
+
+    <ui:define name="bottom">
+        
+    </ui:define>
+
+</ui:composition>
