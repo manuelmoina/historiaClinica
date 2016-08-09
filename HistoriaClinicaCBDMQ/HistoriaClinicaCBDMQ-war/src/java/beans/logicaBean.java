@@ -11,11 +11,14 @@ import entidades.Antropometria;
 import entidades.Datosidentificacion;
 import entidades.Empleado;
 import entidades.Entidades;
+import entidades.Examenfisico;
+import entidades.Examenvisual;
 import entidades.Habitos;
+import entidades.Signosvitales;
 import entidades.VDistributivoAcutal;
+import facades.EmpleadoFacadeLocal;
 import facades.EntidadesFacadeLocal;
 import facades.VDistributivoAcutalFacadeLocal;
-import facadesEmpleado.EmpleadoFacadeLocal;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -47,13 +50,18 @@ public class logicaBean {
     private String area;
     
     private Antecedentespersonales ap ;
+    private Signosvitales sv ;
     private Habitos habitos;
     private Antropometria antropometría;
+    private Examenfisico ef;
+    private Examenvisual ev;
 
     public Antropometria getAntropometría() {
+       /* 
+        * Modigicado prueba calculo percentil (peso/altura^2)*1000
         if(antropometría == null){
             antropometría.setIddatosidentificacion(datosActual);
-        }
+        }*/
         return antropometría;
     }
 
@@ -88,6 +96,30 @@ public class logicaBean {
 
     public void setAp(Antecedentespersonales ap) {
         this.ap = ap;
+    }
+
+    public Signosvitales getSv() {
+        return sv;
+    }
+
+    public void setSv(Signosvitales sv) {
+        this.sv = sv;
+    }
+
+    public Examenfisico getEf() {
+        return ef;
+    }
+
+    public void setEf(Examenfisico ef) {
+        this.ef = ef;
+    }
+
+    public Examenvisual getEv() {
+        return ev;
+    }
+
+    public void setEv(Examenvisual ev) {
+        this.ev = ev;
     }
     
     

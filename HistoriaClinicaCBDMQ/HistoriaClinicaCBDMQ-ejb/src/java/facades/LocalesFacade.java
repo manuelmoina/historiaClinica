@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 
-package facadesEmpleado;
+package facades;
 
-import entidades.Cargos;
+import entidades.Locales;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -16,7 +16,7 @@ import javax.persistence.PersistenceContext;
  * @author emoina
  */
 @Stateless
-public class CargosFacade extends AbstractFacade<Cargos> implements CargosFacadeLocal {
+public class LocalesFacade extends AbstractFacade<Locales> implements LocalesFacadeLocal {
     @PersistenceContext(unitName = "HistoriaClinicaCBDMQ-ejbPU")
     private EntityManager em;
 
@@ -25,8 +25,8 @@ public class CargosFacade extends AbstractFacade<Cargos> implements CargosFacade
         return em;
     }
 
-    public CargosFacade() {
-        super(Cargos.class);
+    public LocalesFacade() {
+        super(Locales.class);
     }
     
 }

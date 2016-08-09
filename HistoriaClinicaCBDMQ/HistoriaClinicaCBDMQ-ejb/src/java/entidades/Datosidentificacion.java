@@ -29,7 +29,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author emoina
+ * @author TOSHIBA
  */
 @Entity
 @Table(name = "datosidentificacion")
@@ -52,14 +52,6 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Datosidentificacion.findByEdadprofesionalactual2", query = "SELECT d FROM Datosidentificacion d WHERE d.edadprofesionalactual2 = :edadprofesionalactual2"),
     @NamedQuery(name = "Datosidentificacion.findByDetalle", query = "SELECT d FROM Datosidentificacion d WHERE d.detalle = :detalle")})
 public class Datosidentificacion implements Serializable {
-    @OneToMany(mappedBy = "iddatosidentificacion")
-    private List<Signosvitales> signosvitalesList;
-    @OneToMany(mappedBy = "iddatosidentificacion")
-    private List<Examenvisual> examenvisualList;
-    @OneToMany(mappedBy = "iddatosidentificacion")
-    private List<Antropometria> antropometriaList;
-    @OneToMany(mappedBy = "iddatosidentificacion")
-    private List<Examenespecifico> examenespecificoList;
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
@@ -105,16 +97,24 @@ public class Datosidentificacion implements Serializable {
     @Column(name = "detalle")
     private String detalle;
     @OneToMany(mappedBy = "iddatosidentificacion")
-    private List<Exposicionesimportantes> exposicionesimportantesList;
+    private List<Signosvitales> signosvitalesList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "iddatosidentificacion")
     private List<Antecedentesfamiliares> antecedentesfamiliaresList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "iddatosidentificacion")
     private List<Antecedentespersonales> antecedentespersonalesList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "iddatosidentificacion")
     private List<Accidentes> accidentesList;
+    @OneToMany(mappedBy = "iddatosidentificacion")
+    private List<Antropometria> antropometriaList;
     @JoinColumn(name = "entidad", referencedColumnName = "id")
     @ManyToOne
     private Entidades entidad;
+    @OneToMany(mappedBy = "iddatosidentificacion")
+    private List<Examenespecifico> examenespecificoList;
+    @OneToMany(mappedBy = "iddatosidentificacion")
+    private List<Examenvisual> examenvisualList;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "iddatosidentificacion")
+    private List<Examenfisico> examenfisicoList;
     @OneToMany(mappedBy = "datId")
     private List<Habitos> habitosList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "iddatosidentificacion")
@@ -248,12 +248,12 @@ public class Datosidentificacion implements Serializable {
     }
 
     @XmlTransient
-    public List<Exposicionesimportantes> getExposicionesimportantesList() {
-        return exposicionesimportantesList;
+    public List<Signosvitales> getSignosvitalesList() {
+        return signosvitalesList;
     }
 
-    public void setExposicionesimportantesList(List<Exposicionesimportantes> exposicionesimportantesList) {
-        this.exposicionesimportantesList = exposicionesimportantesList;
+    public void setSignosvitalesList(List<Signosvitales> signosvitalesList) {
+        this.signosvitalesList = signosvitalesList;
     }
 
     @XmlTransient
@@ -283,12 +283,48 @@ public class Datosidentificacion implements Serializable {
         this.accidentesList = accidentesList;
     }
 
+    @XmlTransient
+    public List<Antropometria> getAntropometriaList() {
+        return antropometriaList;
+    }
+
+    public void setAntropometriaList(List<Antropometria> antropometriaList) {
+        this.antropometriaList = antropometriaList;
+    }
+
     public Entidades getEntidad() {
         return entidad;
     }
 
     public void setEntidad(Entidades entidad) {
         this.entidad = entidad;
+    }
+
+    @XmlTransient
+    public List<Examenespecifico> getExamenespecificoList() {
+        return examenespecificoList;
+    }
+
+    public void setExamenespecificoList(List<Examenespecifico> examenespecificoList) {
+        this.examenespecificoList = examenespecificoList;
+    }
+
+    @XmlTransient
+    public List<Examenvisual> getExamenvisualList() {
+        return examenvisualList;
+    }
+
+    public void setExamenvisualList(List<Examenvisual> examenvisualList) {
+        this.examenvisualList = examenvisualList;
+    }
+
+    @XmlTransient
+    public List<Examenfisico> getExamenfisicoList() {
+        return examenfisicoList;
+    }
+
+    public void setExamenfisicoList(List<Examenfisico> examenfisicoList) {
+        this.examenfisicoList = examenfisicoList;
     }
 
     @XmlTransient
@@ -332,42 +368,6 @@ public class Datosidentificacion implements Serializable {
     @Override
     public String toString() {
         return "entidades.Datosidentificacion[ iddatosidentificacion=" + iddatosidentificacion + " ]";
-    }
-
-    @XmlTransient
-    public List<Signosvitales> getSignosvitalesList() {
-        return signosvitalesList;
-    }
-
-    public void setSignosvitalesList(List<Signosvitales> signosvitalesList) {
-        this.signosvitalesList = signosvitalesList;
-    }
-
-    @XmlTransient
-    public List<Examenvisual> getExamenvisualList() {
-        return examenvisualList;
-    }
-
-    public void setExamenvisualList(List<Examenvisual> examenvisualList) {
-        this.examenvisualList = examenvisualList;
-    }
-
-    @XmlTransient
-    public List<Antropometria> getAntropometriaList() {
-        return antropometriaList;
-    }
-
-    public void setAntropometriaList(List<Antropometria> antropometriaList) {
-        this.antropometriaList = antropometriaList;
-    }
-
-    @XmlTransient
-    public List<Examenespecifico> getExamenespecificoList() {
-        return examenespecificoList;
-    }
-
-    public void setExamenespecificoList(List<Examenespecifico> examenespecificoList) {
-        this.examenespecificoList = examenespecificoList;
     }
     
 }

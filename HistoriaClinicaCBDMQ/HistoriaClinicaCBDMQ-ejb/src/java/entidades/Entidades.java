@@ -20,7 +20,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -31,7 +30,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author emoina
+ * @author TOSHIBA
  */
 @Entity
 @Table(name = "entidades")
@@ -53,10 +52,6 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Entidades.findBySexo", query = "SELECT e FROM Entidades e WHERE e.sexo = :sexo"),
     @NamedQuery(name = "Entidades.findByUsuarioad", query = "SELECT e FROM Entidades e WHERE e.usuarioad = :usuarioad")})
 public class Entidades implements Serializable {
-    @OneToOne(mappedBy = "entidad")
-    private Empleado empleado;
-    @OneToMany(mappedBy = "entidad")
-    private List<Telefonos> telefonosList;
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -273,23 +268,6 @@ public class Entidades implements Serializable {
     @Override
     public String toString() {
         return "entidades.Entidades[ id=" + id + " ]";
-    }
-
-    public Empleado getEmpleado() {
-        return empleado;
-    }
-
-    public void setEmpleado(Empleado empleado) {
-        this.empleado = empleado;
-    }
-
-    @XmlTransient
-    public List<Telefonos> getTelefonosList() {
-        return telefonosList;
-    }
-
-    public void setTelefonosList(List<Telefonos> telefonosList) {
-        this.telefonosList = telefonosList;
     }
     
 }

@@ -26,7 +26,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author emoina
+ * @author TOSHIBA
  */
 @Entity
 @Table(name = "tipoantecedentes")

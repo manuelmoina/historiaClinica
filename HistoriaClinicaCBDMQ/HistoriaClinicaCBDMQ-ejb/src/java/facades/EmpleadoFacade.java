@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package facadesEmpleado;
+package facades;
 
 import entidades.Empleado;
 import javax.ejb.Stateless;

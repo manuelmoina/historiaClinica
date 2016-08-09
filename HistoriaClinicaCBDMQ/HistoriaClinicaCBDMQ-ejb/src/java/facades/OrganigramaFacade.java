@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 
-package facadesEmpleado;
+package facades;
 
-import entidades.Locales;
+import entidades.Organigrama;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -16,7 +16,7 @@ import javax.persistence.PersistenceContext;
  * @author emoina
  */
 @Stateless
-public class LocalesFacade extends AbstractFacade<Locales> implements LocalesFacadeLocal {
+public class OrganigramaFacade extends AbstractFacade<Organigrama> implements OrganigramaFacadeLocal {
     @PersistenceContext(unitName = "HistoriaClinicaCBDMQ-ejbPU")
     private EntityManager em;
 
@@ -25,8 +25,8 @@ public class LocalesFacade extends AbstractFacade<Locales> implements LocalesFac
         return em;
     }
 
-    public LocalesFacade() {
-        super(Locales.class);
+    public OrganigramaFacade() {
+        super(Organigrama.class);
     }
     
 }

@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author emoina
+ * @author TOSHIBA
  */
 @Entity
 @Table(name = "direcciones")
@@ -39,8 +39,6 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Direcciones.findByPiso", query = "SELECT d FROM Direcciones d WHERE d.piso = :piso"),
     @NamedQuery(name = "Direcciones.findByReferencia", query = "SELECT d FROM Direcciones d WHERE d.referencia = :referencia")})
 public class Direcciones implements Serializable {
-    @OneToMany(mappedBy = "direccion")
-    private List<Locales> localesList;
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -163,15 +161,6 @@ public class Direcciones implements Serializable {
     @Override
     public String toString() {
         return "entidades.Direcciones[ id=" + id + " ]";
-    }
-
-    @XmlTransient
-    public List<Locales> getLocalesList() {
-        return localesList;
-    }
-
-    public void setLocalesList(List<Locales> localesList) {
-        this.localesList = localesList;
     }
     
 }

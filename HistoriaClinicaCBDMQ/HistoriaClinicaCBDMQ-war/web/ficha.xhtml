@@ -147,9 +147,9 @@
      <p:row>
          <p:column style="font-weight: bold;"><h:outputText value="LICOR"/></p:column>
          <p:column colspan="2" style="font-weight: bold;" ><p:inputText value="#{logicaBean.habitos.alcoholhz}" style="width: 100%;"/></p:column>
-         <p:column colspan="2" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>
-         <p:column colspan="1" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>
-         <p:column colspan="2" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>  
+         <p:column colspan="2" style="font-weight: bold;" ><p:inputText value="#{logicaBean.habitos.alcoholinicio}" style="width: 100%;"/></p:column>
+         <p:column colspan="1" style="font-weight: bold;" ><p:inputText value="#{logicaBean.habitos.alcoholfin}" style="width: 100%;"/></p:column>
+         <p:column colspan="2" style="font-weight: bold;" ><p:inputText value="#{logicaBean.habitos.alcoholdetalle}" style="width: 100%;"/></p:column>  
     </p:row>    
         
      <p:row>
@@ -158,23 +158,24 @@
           <p:column colspan="5" style="font-weight: bold;"></p:column>
     </p:row>    
     <p:row>
-         <p:column colspan="2" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>
-         <p:column colspan="2" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>
-         <p:column colspan="1" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>
-         <p:column colspan="2" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>  
+        <p:column colspan="2" style="font-weight: bold;" ><p:inputText value="#{logicaBean.habitos.droganombre0}" style="width: 100%;"/></p:column>
+        <p:column colspan="2" style="font-weight: bold;" ><p:inputText value="#{logicaBean.habitos.drogainicio0}" style="width: 100%;"/></p:column>
+        <p:column colspan="1" style="font-weight: bold;" ><p:inputText value="#{logicaBean.habitos.drogafin0}" style="width: 100%;"/></p:column>
+        <p:column colspan="2" style="font-weight: bold;" ><p:inputText  value="#{logicaBean.habitos.droganombre0}"   style="width: 100%;"/></p:column>  
     </p:row>   
     <p:row>
-         <p:column colspan="2" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>
-         <p:column colspan="2" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>
-         <p:column colspan="1" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>
-         <p:column colspan="2" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>  
-    </p:row>     
-     <p:row>
-         <p:column colspan="2" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>
-         <p:column colspan="2" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>
-         <p:column colspan="1" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>
-         <p:column colspan="2" style="font-weight: bold;" ><p:inputText style="width: 100%;"/></p:column>  
-    </p:row>
+        <p:column colspan="2" style="font-weight: bold;" ><p:inputText value="#{logicaBean.habitos.droganombre1}" style="width: 100%;"/></p:column>
+        <p:column colspan="2" style="font-weight: bold;" ><p:inputText value="#{logicaBean.habitos.drogainicio1}" style="width: 100%;"/></p:column>
+        <p:column colspan="1" style="font-weight: bold;" ><p:inputText value="#{logicaBean.habitos.drogafin1}" style="width: 100%;"/></p:column>
+        <p:column colspan="2" style="font-weight: bold;" ><p:inputText  value="#{logicaBean.habitos.droganombre1}"   style="width: 100%;"/></p:column>  
+    </p:row>   
+    <p:row>
+        <p:column colspan="2" style="font-weight: bold;" ><p:inputText value="#{logicaBean.habitos.droganombre2}" style="width: 100%;"/></p:column>
+        <p:column colspan="2" style="font-weight: bold;" ><p:inputText value="#{logicaBean.habitos.drogainicio2}" style="width: 100%;"/></p:column>
+        <p:column colspan="1" style="font-weight: bold;" ><p:inputText value="#{logicaBean.habitos.drogafin2}" style="width: 100%;"/></p:column>
+        <p:column colspan="2" style="font-weight: bold;" ><p:inputText value="#{logicaBean.habitos.droganombre2}"   style="width: 100%;"/></p:column>  
+    </p:row>   
+    
     
     
      <p:row>
@@ -317,12 +318,13 @@
     
     <p:row>
             <p:column colspan="1"  style="font-weight: bold;"><h:outputText value="PESO (Kg)"/></p:column>
-            <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column> 
-            <p:column colspan="3"></p:column> 
-            <p:column colspan="1"  style="font-weight: bold;"><h:outputText value="TALLA (cm)   IMC: 25,4"/></p:column>
-            <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column> 
-            <p:column colspan="1"  style="font-weight: bold;"><h:outputText value="PERCENTIL"/></p:column>
-            <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column> 
+            <p:column colspan="1"><p:inputText value="#{logicaBean.antropometría.peso}" style="width: 100%;"/></p:column> 
+            <p:column colspan="1"  style="font-weight: bold;"><h:outputText value="TALLA (cm)"/></p:column>
+            <p:column colspan="1"><p:inputText value="#{logicaBean.antropometría.talla}" style="width: 100%;"/></p:column> 
+            <p:column colspan="1"  style="font-weight: bold;"><h:outputText value="IMC"/></p:column>
+            <p:column colspan="1"><p:inputText value="#{logicaBean.antropometría.imc}" style="width: 100%;"/></p:column> 
+            <p:column colspan="1"  style="font-weight: bold;"><h:outputText value="ESTADO NUTRICIONAL"/></p:column>
+            <p:column colspan="1"><p:inputText value="#{logicaBean.antropometría.imcnivel}" style="width: 100%;"/></p:column> 
     </p:row>
  
     <p:row>
@@ -338,42 +340,42 @@
     </p:row>
     <p:row>
         <p:column style="font-weight: bold;" ><h:outputText value="Dist. Biacromial "/></p:column>
-        <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column> 
-        <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column> 
+        <p:column colspan="1"><p:inputText value="#{logicaBean.antropometría.dbiacromial}" style="width: 100%;"/></p:column> 
+        <p:column colspan="1"><p:inputText value="#{logicaBean.antropometría.dbiacromialp}" style="width: 100%;"/></p:column> 
         <p:column style="font-weight: bold;" ><h:outputText value="Hombro -Puño cerrado "/></p:column>
-        <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column> 
-        <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column> 
+        <p:column colspan="1"><p:inputText value="#{logicaBean.antropometría.hombropunocerrado}" style="width: 100%;"/></p:column> 
+        <p:column colspan="1"><p:inputText value="#{logicaBean.antropometría.hombropunocerradop}" style="width: 100%;"/></p:column> 
         <p:column style="font-weight: bold;" ><h:outputText value="Codo - puño cerrado "/></p:column>
-        <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column> 
-        <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column> 
+        <p:column colspan="1"><p:inputText value="#{logicaBean.antropometría.codopunocerrado}" style="width: 100%;"/></p:column> 
+        <p:column colspan="1"><p:inputText value="#{logicaBean.antropometría.codopunocerradop}" style="width: 100%;"/></p:column> 
     </p:row>             
              
     <p:row>
         <p:column style="font-weight: bold;" ><h:outputText value="Ojo- Suelo"/></p:column>
-        <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column> 
-        <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column> 
+        <p:column colspan="1"><p:inputText value="#{logicaBean.antropometría.ojosuelo}" style="width: 100%;"/></p:column> 
+        <p:column colspan="1"><p:inputText value="#{logicaBean.antropometría.ojosuelop}" style="width: 100%;"/></p:column> 
         <p:column style="font-weight: bold;" ><h:outputText value="Hombro - mano extendida"/></p:column>
-        <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column> 
-        <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column> 
+        <p:column colspan="1"><p:inputText value="#{logicaBean.antropometría.hombromano}"  style="width: 100%;"/></p:column> 
+        <p:column colspan="1"><p:inputText value="#{logicaBean.antropometría.hombromanop}" style="width: 100%;"/></p:column> 
         <p:column style="font-weight: bold;" ><h:outputText value="Codo- mano extendida "/></p:column>
-        <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column> 
-        <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column> 
+        <p:column colspan="1"><p:inputText value="#{logicaBean.antropometría.codomanoestendida}" style="width: 100%;"/></p:column> 
+        <p:column colspan="1"><p:inputText value="#{logicaBean.antropometría.codomanoestendidap}" style="width: 100%;"/></p:column> 
     </p:row>             
     <p:row>
         <p:column style="font-weight: bold;" ><h:outputText value="Codo - Suelo"/></p:column>
-        <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column> 
-        <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column> 
+        <p:column colspan="1"><p:inputText value="#{logicaBean.antropometría.codosuelo}" style="width: 100%;"/></p:column> 
+        <p:column colspan="1"><p:inputText value="#{logicaBean.antropometría.codosuelop}" style="width: 100%;"/></p:column> 
         <p:column style="font-weight: bold;" ><h:outputText value="Cadera suelo"/></p:column>
-        <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column> 
-        <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column> 
+        <p:column colspan="1"><p:inputText value="#{logicaBean.antropometría.caderasuelo}" style="width: 100%;"/></p:column> 
+        <p:column colspan="1"><p:inputText value="#{logicaBean.antropometría.caderasuelop}" style="width: 100%;"/></p:column> 
         <p:column colspan="1" style="font-weight: bold;" ></p:column>
 <p:column colspan="1"><p:inputText style="width: 100%;"/>
     <h:outputText value="DERECHO: "/>
-    <p:selectBooleanButton onLabel="Si" offLabel="No" style="width:60px" />
+    <p:selectBooleanButton value="#{logicaBean.antropometría.mano}"  onLabel="Si" offLabel="No" style="width:60px" />
 </p:column> 
 <p:column colspan="1"><p:inputText style="width: 100%;"/>
     <h:outputText value="SURDO: "/>
-    <p:selectBooleanButton onLabel="Si" offLabel="No" style="width:60px" />
+    <p:selectBooleanButton value="#{logicaBean.antropometría.mano}" onLabel="Si" offLabel="No" style="width:60px" />
 </p:column>         
         
     </p:row>              
@@ -386,13 +388,13 @@
     </p:row>
     <p:row>
         <p:column style="font-weight: bold;" ><h:outputText value="TA: "/></p:column>
-        <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column> 
+        <p:column colspan="1"><p:inputText value="#{logicaBean.sv.ta}" style="width: 100%;"/></p:column> 
         <p:column style="font-weight: bold;" ><h:outputText value="T°C"/></p:column>
-        <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column> 
+        <p:column colspan="1"><p:inputText value="#{logicaBean.sv.tc}" style="width: 100%;"/></p:column> 
         <p:column style="font-weight: bold;" ><h:outputText value="F.C"/></p:column>
-        <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column> 
+        <p:column colspan="1"><p:inputText value="#{logicaBean.sv.fc}" style="width: 100%;"/></p:column> 
         <p:column style="font-weight: bold;" ><h:outputText value="F.R"/></p:column>
-        <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column>         
+        <p:column colspan="1"><p:inputText value="#{logicaBean.sv.fr}" style="width: 100%;"/></p:column>         
     </p:row>
     <p:row>
         <p:column colspan="9" styleClass="ui-widget-header" style="text-align: center;">
@@ -402,88 +404,88 @@
  
     <p:row>
       <p:column style="font-weight: bold;" ><h:outputText value="CABEZA "/></p:column>
-      <p:column colspan="3"><p:inputText style="width: 100%;"/></p:column>  
+      <p:column colspan="3"><p:inputText value="#{logicaBean.ef.cabeza}" style="width: 100%;"/></p:column>  
       <p:column style="font-weight: bold;" ><h:outputText value="OJOS "/></p:column>
-      <p:column colspan="4"><p:inputText style="width: 100%;"/></p:column>        
+      <p:column colspan="4"><p:inputText value="#{logicaBean.ef.ojos}" style="width: 100%;"/></p:column>        
     </p:row>
     <p:row>
       <p:column style="font-weight: bold;" ><h:outputText value="NARIZ "/></p:column>
-      <p:column colspan="3"><p:inputText style="width: 100%;"/></p:column>  
+      <p:column colspan="3"><p:inputText value="#{logicaBean.ef.nariz}" style="width: 100%;"/></p:column>  
       <p:column style="font-weight: bold;" ><h:outputText value="BOCA "/></p:column>
-      <p:column colspan="4"><p:inputText style="width: 100%;"/></p:column>        
+      <p:column colspan="4"><p:inputText value="#{logicaBean.ef.boca}" style="width: 100%;"/></p:column>        
     </p:row> 
     <p:row>
       <p:column style="font-weight: bold;" ><h:outputText value="OIDOS "/></p:column>
-      <p:column colspan="3"><p:inputText style="width: 100%;"/></p:column>  
+      <p:column colspan="3"><p:inputText value="#{logicaBean.ef.oidos}" style="width: 100%;"/></p:column>  
       <p:column style="font-weight: bold;" ><h:outputText value="CUELLO "/></p:column>
-      <p:column colspan="4"><p:inputText style="width: 100%;"/></p:column>        
+      <p:column colspan="4"><p:inputText value="#{logicaBean.ef.cuello}" style="width: 100%;"/></p:column>        
     </p:row>
     <p:row>
       <p:column style="font-weight: bold;" ><h:outputText value="TORAX "/></p:column>
-      <p:column colspan="3"><p:inputText style="width: 100%;"/></p:column>  
+      <p:column colspan="3"><p:inputText value="#{logicaBean.ef.torax}" style="width: 100%;"/></p:column>  
       <p:column style="font-weight: bold;" ><h:outputText value="PULMONES "/></p:column>
-      <p:column colspan="4"><p:inputText style="width: 100%;"/></p:column>        
+      <p:column colspan="4"><p:inputText value="#{logicaBean.ef.pulmones}" style="width: 100%;"/></p:column>        
     </p:row> 
     <p:row>
       <p:column style="font-weight: bold;" ><h:outputText value="CORAZÓN "/></p:column>
-      <p:column colspan="3"><p:inputText style="width: 100%;"/></p:column>  
+      <p:column colspan="3"><p:inputText value="#{logicaBean.ef.corazon}" style="width: 100%;"/></p:column>  
       <p:column style="font-weight: bold;" ><h:outputText value="ABDOMEN "/></p:column>
-      <p:column colspan="4"><p:inputText style="width: 100%;"/></p:column>        
+      <p:column colspan="4"><p:inputText value="#{logicaBean.ef.abdomen}" style="width: 100%;"/></p:column>        
     </p:row>
     <p:row>
       <p:column style="font-weight: bold;" ><h:outputText value="ANILLOS INGUINALES "/></p:column>
-      <p:column colspan="3"><p:inputText style="width: 100%;"/></p:column>  
+      <p:column colspan="3"><p:inputText value="#{logicaBean.ef.anillosinguine}" style="width: 100%;"/></p:column>  
       <p:column style="font-weight: bold;" ><h:outputText value="GENITALES "/></p:column>
-      <p:column colspan="4"><p:inputText style="width: 100%;"/></p:column>        
+      <p:column colspan="4"><p:inputText value="#{logicaBean.ef.genitales}" style="width: 100%;"/></p:column>        
     </p:row> 
     <p:row>
       <p:column style="font-weight: bold;" ><h:outputText value="COLUMNA "/></p:column>
-      <p:column colspan="3"><p:inputText style="width: 100%;"/></p:column>  
+      <p:column colspan="3"><p:inputText value="#{logicaBean.ef.columna}" style="width: 100%;"/></p:column>  
       <p:column style="font-weight: bold;" ><h:outputText value="DESVIACIONES COLUMNA  "/></p:column>
-      <p:column colspan="4"><p:inputText style="width: 100%;"/></p:column>        
+      <p:column colspan="4"><p:inputText value="#{logicaBean.ef.desviacioncolumna}" style="width: 100%;"/></p:column>        
     </p:row>
     <p:row>
         <p:column style="font-weight: bold;" rowspan="2" colspan="3" ><h:outputText value="Ms. SUPERIORES "/></p:column>
-      <p:column colspan="6"><p:inputText style="width: 100%;"/></p:column>        
+        <p:column colspan="6"><p:inputText value="#{logicaBean.ef.msuperior}" style="width: 100%;"/></p:column>        
     </p:row>             
     <p:row>
       <p:column style="font-weight: bold;" ><h:outputText value="TONO "/></p:column>
-      <p:column ><p:inputText style="width: 100%;"/></p:column>  
+      <p:column ><p:inputText value="#{logicaBean.ef.msuperiort}" style="width: 100%;"/></p:column>  
       <p:column style="font-weight: bold;" ><h:outputText value="FUERZA"/></p:column>
-      <p:column ><p:inputText style="width: 100%;"/></p:column>  
+      <p:column ><p:inputText value="#{logicaBean.ef.msuperiorf}" style="width: 100%;"/></p:column>  
       <p:column style="font-weight: bold;" ><h:outputText value="SENSIBILIDAD"/></p:column>
-      <p:column ><p:inputText style="width: 100%;"/></p:column>  
+      <p:column ><p:inputText value="#{logicaBean.ef.msuperiors}" style="width: 100%;"/></p:column>  
     </p:row>
     
     <p:row>
         <p:column style="font-weight: bold;" rowspan="2" colspan="3" ><h:outputText value="Ms. INFERIORES"/></p:column>
-      <p:column colspan="6"><p:inputText style="width: 100%;"/></p:column>        
+        <p:column colspan="6"><p:inputText value="#{logicaBean.ef.minferior}" style="width: 100%;"/></p:column>        
     </p:row>             
     <p:row>
       <p:column style="font-weight: bold;" ><h:outputText value="TONO "/></p:column>
-      <p:column ><p:inputText style="width: 100%;"/></p:column>  
+      <p:column ><p:inputText value="#{logicaBean.ef.minferiort}" style="width: 100%;"/></p:column>  
       <p:column style="font-weight: bold;" ><h:outputText value="FUERZA"/></p:column>
-      <p:column ><p:inputText style="width: 100%;"/></p:column>  
+      <p:column ><p:inputText value="#{logicaBean.ef.minferiorf}" style="width: 100%;"/></p:column>  
       <p:column style="font-weight: bold;" ><h:outputText value="SENSIBILIDAD"/></p:column>
-      <p:column ><p:inputText style="width: 100%;"/></p:column>  
+      <p:column ><p:inputText value="#{logicaBean.ef.minferiors}" style="width: 100%;"/></p:column>  
     </p:row>
     <p:row>
       <p:column style="font-weight: bold;" ><h:outputText value="CIRCULACIÓN PERIFÉRICA "/></p:column>
-      <p:column colspan="3"><p:inputText style="width: 100%;"/></p:column>  
+      <p:column colspan="3"><p:inputText value="#{logicaBean.ef.circulacion}" style="width: 100%;"/></p:column>  
       <p:column style="font-weight: bold;" ><h:outputText value="PIEL FANERAS "/></p:column>
-      <p:column colspan="4"><p:inputText style="width: 100%;"/></p:column>        
+      <p:column colspan="4"><p:inputText value="#{logicaBean.ef.pielfaneras}" style="width: 100%;"/></p:column>        
     </p:row>
     <p:row>
       <p:column style="font-weight: bold;" ><h:outputText value="EQUILIBRIO "/></p:column>
-      <p:column colspan="3"><p:inputText style="width: 100%;"/></p:column>  
+      <p:column colspan="3"><p:inputText value="#{logicaBean.ef.equilibrio}" style="width: 100%;"/></p:column>  
       <p:column style="font-weight: bold;" ><h:outputText value="MARCHA"/></p:column>
-      <p:column colspan="4"><p:inputText style="width: 100%;"/></p:column>        
+      <p:column colspan="4"><p:inputText value="#{logicaBean.ef.marcha}" style="width: 100%;"/></p:column>        
     </p:row>
     <p:row>
       <p:column style="font-weight: bold;" ><h:outputText value="COORDINACIÓN "/></p:column>
-      <p:column colspan="3"><p:inputText style="width: 100%;"/></p:column>  
+      <p:column colspan="3"><p:inputText value="#{logicaBean.ef.minferior}" style="width: 100%;"/></p:column>  
       <p:column style="font-weight: bold;" ><h:outputText value="REFLEJOS "/></p:column>
-      <p:column colspan="4"><p:inputText style="width: 100%;"/></p:column>        
+      <p:column colspan="4"><p:inputText value="#{logicaBean.ef.reflejos}" style="width: 100%;"/></p:column>        
     </p:row>           
     <p:row>
         <p:column colspan='9' styleClass="ui-widget-header" style="text-align: center;">
@@ -648,29 +650,29 @@
     <p:row>
       <p:column style="font-weight: bold; text-align: center;" colspan=""><h:outputText value="OPTOMETRÍA"/></p:column>
       <p:column style="font-weight: bold; text-align: center;" colspan="1"><h:outputText value="OD "/></p:column>
-       <p:column colspan="1"><p:inputText style="width: 100%;"/></p:column>  
+      <p:column colspan="1"><p:inputText value="#{logicaBean.ev.optoderecho}" style="width: 100%;"/></p:column>  
       <p:column style="font-weight: bold; text-align: center;" colspan="1"><h:outputText value="OI "/></p:column>
-       <p:column colspan="2"><p:inputText style="width: 100%;"/></p:column> 
+       <p:column colspan="2"><p:inputText value="#{logicaBean.ev.optoderecho}" style="width: 100%;"/></p:column> 
       <p:column style="font-weight: bold; text-align: center;" colspan="1"><h:outputText value="CAMPIMETRÍA "/> </p:column>
         <p:column style="font-weight: bold; text-align: center;" colspan="1"><h:outputText value="IZQ. "/> 
-            <p:selectBooleanButton onLabel="Si" offLabel="No" style="width:60px" /> </p:column>
+            <p:selectBooleanButton value="#{logicaBean.ev.campimetriad}"  onLabel="Si" offLabel="No" style="width:60px" /> </p:column>
          <p:column style="font-weight: bold; text-align: center;" colspan="1"><h:outputText value="DER."/> 
-             <p:selectBooleanButton onLabel="Si" offLabel="No" style="width:60px" /> </p:column> 
+             <p:selectBooleanButton value="#{logicaBean.ev.campimetriai}"  onLabel="Si" offLabel="No" style="width:60px" /> </p:column> 
     </p:row>
     <p:row>
       <p:column style="font-weight: bold; text-align: center;" colspan="2"><h:outputText value="IDENTIFICACIÓN DE COLORES"/></p:column>
          <p:column style="font-weight: bold; text-align: center;" colspan="1">
-             <p:selectBooleanButton onLabel="Si" offLabel="No" style="width:60px" /> </p:column> 
+             <p:selectBooleanButton value="#{logicaBean.ev.colores}"  onLabel="Si" offLabel="No" style="width:60px" /> </p:column> 
     </p:row>
     <p:row>
       <p:column style="font-weight: bold; text-align: center;" colspan="1"><h:outputText value="OBSERVACIONES"/></p:column>
          <p:column style="font-weight: bold; text-align: center;" colspan="8">
-             <p:inputText style="width: 100%;"/> </p:column> 
+             <p:inputText value="#{logicaBean.ev.observaciones}"  style="width: 100%;"/> </p:column> 
     </p:row>
         <p:row>
       <p:column style="font-weight: bold; text-align: center;" colspan="2"><h:outputText value="IDONEO"/></p:column>
          <p:column style="font-weight: bold; text-align: center;" colspan="1">
-             <p:selectBooleanButton onLabel="Si" offLabel="No" style="width:60px" /> </p:column> 
+             <p:selectBooleanButton value="#{logicaBean.datosActual.idoneo}"  onLabel="Si" offLabel="No" style="width:60px" /> </p:column> 
     </p:row>
 
             
